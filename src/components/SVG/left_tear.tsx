@@ -1,0 +1,52 @@
+import * as React from "react";
+import type { JSX } from "react/jsx-runtime";
+export function LTear(props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>){ return(
+  <svg
+    viewBox="0 0 1170 773"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#filter0_f_6054_576)">
+      <path
+        d="M260.677 244.831C28.5169 136.463 -102.508 249.772 -139 319.972V573H970C694.86 573 550.878 380.29 260.677 244.831Z"
+        fill="url(#paint0_radial_6054_576)"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_f_6054_576"
+        x={-20}
+        y={-20}
+        width={1509}
+        height={773}
+        filterUnits="objectBoundingBox"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation={100}
+          result="effect1_foregroundBlur_6054_576"
+        />
+      </filter>
+      <radialGradient
+        id="paint0_radial_6054_576"
+        cx={0}
+        cy={0}
+        r={1}
+        gradientTransform="matrix(124.276 -424.906 1772.47 657.73 363.594 659.327)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset={0.062123} stopColor="#FF6A00" />
+        <stop offset={1} stopColor="#0111FF" />
+      </radialGradient>
+    </defs>
+  </svg>
+);}
+export default LTear;
