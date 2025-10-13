@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://https://turtlemaster69.github.io/AyvaTechCLI/", // <-- add this
+  "homepage": "https://https://turtlemaster69.github.io/AyvaTechCLI/", 
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",                 // <-- for gh-pages
-    "deploy": "gh-pages -d dist"                 // <-- deploy to gh-pages
+    "predeploy": "npm run build",                
+    "deploy": "gh-pages -d dist"                 
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -34,6 +34,6 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7",
-    "gh-pages": "^5.0.0"                        // <-- add this
+    "gh-pages": "^5.0.0"                       
   }
 }
