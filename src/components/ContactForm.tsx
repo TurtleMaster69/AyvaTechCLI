@@ -1,5 +1,5 @@
 import { Alert, Box, Button, Paper, Snackbar, styled, TextField } from '@mui/material';
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 
 type ResultType = {

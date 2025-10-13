@@ -1,5 +1,4 @@
 import { Box } from '@mui/material'
-import React from 'react'
 import Content1 from './Content1'
 import Content2 from './Content2'
 import Content3 from './Content3'

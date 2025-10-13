@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material'
-import React from 'react'
 import BlogImg from '../../assets/png/BlogImage.png'
 import Header from '../Header'
 
