@@ -1,13 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { keyframes } from "@mui/system";
 import LoadingStar from '../SVG/star_shape'
+import { useScrollToSection } from "../Utils/useScrollToSection";
 
 const spin = keyframes`
   0% { transform: rotate(-45deg); }
   100% { transform: rotate(315deg); }
 `;
 
-export default function NavLinkWithStars({ label }: { label: string }) {
+
+export default function NavLinkWithStars({ label, href,sectionId=undefined}: { label: string ,href:string,sectionId?:string}) {
+  const scrollToSection = useScrollToSection();
   return (
     <Box
       sx={{
@@ -81,7 +84,12 @@ export default function NavLinkWithStars({ label }: { label: string }) {
           transition: "color 0.3s",
         }}
       >
-        {label}
+        <Link color={'white'} underline="none"
+        onClick={() => scrollToSection(href, sectionId)}
+        sx={{ cursor: "pointer" }}
+  >
+          {label}
+        </Link>
       </Typography>
     </Box>
   );

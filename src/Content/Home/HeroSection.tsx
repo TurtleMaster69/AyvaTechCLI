@@ -10,8 +10,10 @@ import Header from "../Header";
 export function HeroSection() {
   return (
     <Background>
-      <Header></Header>
+      <Header id={'homeHeader'}></Header>
       <Button
+      component="a"
+  href="https://ash-speed.hetzner.com/100MB.bin"
         sx={{
           display: "inline-flex",
           alignItems: "center",
@@ -24,6 +26,9 @@ export function HeroSection() {
           border: "2px solid rgba(255, 255, 255, 0.04)",
           mt: 25,
           color: "#FFFFFF",
+          "&:hover": {
+          background: "linear-gradient(to bottom left, rgba(255,255,255,0.2), rgba(255,255,255,0.2))",
+        },
         }}
       >
         <Stack direction="row" spacing={1} alignItems="center">

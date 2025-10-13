@@ -1,16 +1,19 @@
 import { Button, Typography } from '@mui/material'
 import { type ReactNode } from 'react'
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useScrollToContactSection } from '../Utils/useScrollToContactSection';
 
 interface buttonProps{
   children: ReactNode
   endIcon?: boolean
 }
 
-export default function buttonPrimary({children,endIcon=true}:buttonProps) {
+export default function ButtonPrimary({children,endIcon=true}:buttonProps) {
+  const scrollToSection = useScrollToContactSection();
   return (
     <Button
                 variant="contained"
+                onClick={scrollToSection}
                 {...(endIcon && { endIcon: <ArrowForwardIcon /> })}
                 sx={{
                   paddingLeft: "24px",

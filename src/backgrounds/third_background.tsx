@@ -6,11 +6,13 @@ import LShape from "../assets/png/rShape.png";
 
 interface BackgroundProps{
   children:ReactNode
+  id:string
 }
 
-export function Third_background({children}:BackgroundProps){
+export function Third_background({children,id}:BackgroundProps){
   return (
   <Box
+    id={id}
     sx={{
           width: 1440,
           height: 1000,

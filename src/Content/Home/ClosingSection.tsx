@@ -7,8 +7,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import Footer from '../Footer';
 import AyvaLogo from '../../assets/svg/AyvaLogo.svg'
+import { useScrollToSection } from '../../components/Utils/useScrollToSection';
+import { useScrollToContactSection } from '../../components/Utils/useScrollToContactSection';
 
 export default function ClosingSection() {
+    const scrollToSection = useScrollToSection();
+    const scrollToSectionContact = useScrollToContactSection();
   return (
     <Main_background>
       <Stack spacing={7.5} alignItems="center" sx={{ overflow: "visible" }}>
@@ -56,8 +60,8 @@ export default function ClosingSection() {
                     />
             <Typography sx={{ pt: 2, pb: 3, fontFamily: 'Inter Tight', fontSize: '14px', letterSpacing: '0px', lineHeight: '2.2', fontWeight: 300 }}>
               Ljubljana, Slovenia <br></br>
-              info@ayva.si <br />
-              +386 51 238 953
+              <Link href="mailto:info@ayva.si" sx={{ cursor: "pointer" }} color="inherit" underline="hover">info@ayva.si </Link><br />
+              <Link href="tel:+38651238953" sx={{ cursor: "pointer" }} color="inherit" underline="hover">+386 51 238 953</Link>
             </Typography>
             <Box sx={{
               display: 'flex', flexDirection: 'row', gap: 2
@@ -78,16 +82,16 @@ export default function ClosingSection() {
               Quick Navigation
             </Typography>
             <Typography sx={{ pt: 2, pb: 3, fontFamily: 'Inter Tight', fontSize: '14px', letterSpacing: '0px', lineHeight: '2.2', fontWeight: 300 }}>
-              <Link href="/about" color="inherit" underline="hover">
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'why-us-section')} color="inherit" underline="hover">
                 About us
               </Link> <br></br>
-              <Link href="/about" color="inherit" underline="hover">
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'why-us-section')} color="inherit" underline="hover">
                 Why us
               </Link> <br></br>
-              <Link href="/about" color="inherit" underline="hover">
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/blog','blogHeader')} color="inherit" underline="hover">
                 Blog
               </Link><br></br>
-              <Link href="/about" color="inherit" underline="hover">
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} color="inherit" underline="hover">
                 Contact
               </Link>
             </Typography>
@@ -112,12 +116,12 @@ export default function ClosingSection() {
             mt:3,
             lineHeight:'200%'
           }}>
-            <Link href="/about" color="inherit" underline="hover">
+            <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} color="inherit" underline="hover">
               Book a consultation
               <ArrowForwardIcon fontSize="small" sx={{ml:1}} />
             </Link>
             <br></br>
-            <Link href="/about" color="inherit" underline="hover">
+            <Link href="https://ash-speed.hetzner.com/100MB.bin" color="inherit" underline="hover">
               Download the guide
               <ArrowForwardIcon fontSize="small" sx={{ml:1}} />
             </Link>

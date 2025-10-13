@@ -7,9 +7,26 @@ import WhySection from "../Content/Home/WhySection";
 import PictureSection from "../Content/Home/PictureSection";
 import ClosingSection from "../Content/Home/ClosingSection";
 import BlogSection from "../Content/Home/BlogSection";
+import { useEffect } from "react";
 
 export function ContactUs() {
-  return (
+        useEffect(() => {
+      const centerHorizontally = () => {
+        const docWidth = document.body.scrollWidth;
+        const winWidth = window.innerWidth;
+        const scrollLeft = (docWidth - winWidth) / 2;
+        window.scrollTo({ left: scrollLeft });
+      };
+  
+      window.addEventListener('resize', centerHorizontally);
+      window.addEventListener('load', centerHorizontally);
+  
+      return () => {
+        window.removeEventListener('resize', centerHorizontally);
+        window.removeEventListener('load', centerHorizontally);
+      };
+    }, []);
+    return (
     <ThemeProvider>
       <Stack
         sx={{

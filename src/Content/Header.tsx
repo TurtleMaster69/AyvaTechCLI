@@ -4,12 +4,14 @@ import AyvaLogo from '../assets/svg/AyvaLogo.svg'
 import LanguageIcon from '@mui/icons-material/Language';
 import ButtonPrimary from "../components/Buttons/buttonPrimary";
 import NavLinkWithStars from "../components/Links/NavLinkWithStars";
+import { useScrollToSection } from "../components/Utils/useScrollToSection";
 
-export default function Header() {
+export default function Header({id}:{id:string}) {
     const [language, setLanguage] = useState("en");
-
+    const scrollToSection = useScrollToSection();
     return (
         <AppBar
+            id={id}
             position="absolute"
             elevation={0}
             sx={{
@@ -30,7 +32,8 @@ export default function Header() {
                 }}
             >
                 {/* Left: Logo */}
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <Box onClick={() => scrollToSection("/home")} sx={{ display: "flex", alignItems: "center", gap: 1 ,cursor: "pointer"}}>
+
                     <Box
                         component="img"
                         src={AyvaLogo}
@@ -41,8 +44,8 @@ export default function Header() {
 
                 {/* Center: Nav links */}
                 <Stack direction="row" spacing={4} sx={{ alignItems: "center",position:'absolute',left:'50%', transform: "translateX(-50%)"}}>
-                    {["About Us", "Why Us", "Blog", "Contact"].map((item) => (
-                        <NavLinkWithStars label={item}>
+                    {[["About Us",'/home','why-us-section'], ["Why Us",'/home','why-us-section'], ["Blog",'/blog'], ["Contact",'/contact']].map((item) => (
+                        <NavLinkWithStars label={item[0]} href={item[1]} sectionId={item[2]}>
                         </NavLinkWithStars>
                     ))}
                 </Stack>

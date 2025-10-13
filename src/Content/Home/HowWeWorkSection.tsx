@@ -44,6 +44,8 @@ export default function HowWeWorkSection() {
                                 key={index}
                                 title={item.title}
                                 content={item.content}
+                                type='external'
+                                value='https://justinjackson.ca/words.html'
                               />
                             ))}
                 </Stack>

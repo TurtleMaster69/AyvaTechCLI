@@ -5,11 +5,13 @@ import { Box, Typography } from '@mui/material'
 interface BorderLinkProps{
     title:string;
     content:string;
+    type?: "email" | "phone" | "external";
+    value:string
 }
 
-export default function borderLink({title,content}:BorderLinkProps) {
+export default function borderLink({title,content,type,value}:BorderLinkProps) {
     return (
-        <BorderButton width={470} height={"100%"} pb={5} pt={5}>
+        <BorderButton width={470} height={"100%"} pb={5} pt={5} type={type} value={value}>
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start",width:310 }}>
                 <Typography sx={{
                     fontFamily: "'Delight', Helvetica",
