@@ -1,0 +1,21 @@
+{
+    "items": [
+        {
+            "collectionId": "pbc_1063089307",
+            "collectionName": "blogs",
+            "components": [
+                "924469",
+                "872703"
+            ],
+            "created": "2025-10-15 16:29:25.120Z",
+            "id": "054711",
+            "thumbnail": "hu4et0xio73y1jm",
+            "title": "What we know about AI",
+            "updated": "2025-10-15 16:34:59.728Z"
+        }
+    ],
+    "page": 1,
+    "perPage": 30,
+    "totalItems": 1,
+    "totalPages": 1
+}

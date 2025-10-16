@@ -1,0 +1,34 @@
+{
+    "items": [
+        {
+            "blog_id": "054711",
+            "collectionId": "pbc_1724004998",
+            "collectionName": "blog_components",
+            "content": "tralala hopsasa",
+            "created": "2025-10-15 16:30:46.783Z",
+            "id": "924469",
+            "image": "hu4et0xio73y1jm",
+            "layout_type": "layout1",
+            "order": 1,
+            "title": "Dangers of AI",
+            "updated": "2025-10-15 16:30:46.783Z"
+        },
+        {
+            "blog_id": "054711",
+            "collectionId": "pbc_1724004998",
+            "collectionName": "blog_components",
+            "content": "tralala hopsasa",
+            "created": "2025-10-15 16:34:59.443Z",
+            "id": "872703",
+            "image": "hu4et0xio73y1jm",
+            "layout_type": "layout2",
+            "order": 2,
+            "title": "AI benefits",
+            "updated": "2025-10-15 16:34:59.443Z"
+        }
+    ],
+    "page": 1,
+    "perPage": 30,
+    "totalItems": 2,
+    "totalPages": 1
+}

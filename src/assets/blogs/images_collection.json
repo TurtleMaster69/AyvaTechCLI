@@ -1,0 +1,62 @@
+{
+    "items": [
+        {
+            "collectionId": "pbc_3607937828",
+            "collectionName": "images",
+            "created": "2025-10-15 16:29:42.441Z",
+            "id": "hu4et0xio73y1jm",
+            "image": "1349062_ytj3ylrqix.jpeg",
+            "title": "Test",
+            "updated": "2025-10-15 16:29:42.441Z"
+        },
+        {
+            "collectionId": "pbc_3607937828",
+            "collectionName": "images",
+            "created": "2025-10-15 16:37:07.174Z",
+            "id": "w8jyzjj93kdxgqq",
+            "image": "vector_59_ti3roily79.png",
+            "title": "Test1",
+            "updated": "2025-10-15 16:37:07.174Z"
+        },
+        {
+            "collectionId": "pbc_3607937828",
+            "collectionName": "images",
+            "created": "2025-10-15 16:42:39.734Z",
+            "id": "gogryxcs9ayrsw1",
+            "image": "top1_ft40x1ztrm.png",
+            "title": "blue",
+            "updated": "2025-10-15 16:42:39.734Z"
+        },
+        {
+            "collectionId": "pbc_3607937828",
+            "collectionName": "images",
+            "created": "2025-10-15 16:54:15.660Z",
+            "id": "fvbzefhj4qttd27",
+            "image": "loading_start_4of131vff8.png",
+            "title": "zvezda",
+            "updated": "2025-10-15 16:54:15.660Z"
+        },
+        {
+            "collectionId": "pbc_3607937828",
+            "collectionName": "images",
+            "created": "2025-10-15 17:05:32.749Z",
+            "id": "m9jbomr4ogleq17",
+            "image": "star3_2vtb6wdjqa.png",
+            "title": "asdf",
+            "updated": "2025-10-15 17:05:32.749Z"
+        },
+        {
+            "collectionId": "pbc_3607937828",
+            "collectionName": "images",
+            "created": "2025-10-15 17:09:44.093Z",
+            "id": "3t3lu7iksd67mbn",
+            "image": "image3_cjt51seclr.png",
+            "title": "vcszvx",
+            "updated": "2025-10-15 17:09:44.093Z"
+        }
+    ],
+    "page": 1,
+    "perPage": 1000,
+    "totalItems": 6,
+    "totalPages": 1
+}
