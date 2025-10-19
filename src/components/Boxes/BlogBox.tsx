@@ -4,10 +4,10 @@ import ArrowForwardLink from '../Links/ArrowForwardLink'
 
 export default function BlogBox() {
   return (
-    <Box sx={{display:'flex',flexDirection:'column',height:386,width:392}}>
+    <Box sx={{display:'flex',flexDirection:'column',height:386,width:376}}>
         <Box
       sx={{
-        width: 392,      // box width
+        width: 376,      // box width
         height: 204,     // box height
         overflow: "hidden",
         display:'flex',
@@ -27,7 +27,7 @@ export default function BlogBox() {
         }}
       />
     </Box>
-        <Box sx={{ width: 392, height:162}}>
+        <Box sx={{ width: '100%', height:162}}>
             <Stack>
                 <Typography sx={{fontFamily:'Inter Tight',fontSize:'14px',color:'rgba(255,255,255,0.6)',pb:'10px'}}>
                     Jan 12th, 2025

@@ -26,7 +26,6 @@ export default function ClosingSection() {
               // optional, for larger spread
               backgroundRepeat: "no-repeat",
               WebkitTextFillColor: 'transparent',
-              fontSize: "56px",
               textAlign: "center",
               overflow: "visible",
               lineHeight: '140%',
@@ -43,15 +42,22 @@ export default function ClosingSection() {
         display: "flex",
         flexDirection: 'row',
         gap: 0,
-        alignItems: "start",
-        justifyContent: "center",
-        width: "100%",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "85%",
         mt: 25,
-
-      }}
+        mb:22,
+        '@media (max-width:800px)': {
+        flexDirection:'column',
+        gap:5
+      },
+        }}
       >
-        <Box sx={{ width: '50%', pl: 18, display: 'flex', flexDirection: 'row' , justifyContent:'start',alignItems:'start'}}>
-          <Box sx={{ width: '50%' }}>
+        <Box sx={{mt:2.5,flex:1,display: 'flex', flexDirection: 'row' , justifyContent:'space-between',alignItems:'center','@media (max-width:800px)': {
+      width: '100%', // <--- ensure full width in column layout
+    },}}>
+          <Box sx={{
+          }}>
             <Box
                         component="img"
                         src={AyvaLogo}
@@ -77,7 +83,7 @@ export default function ClosingSection() {
               </Link>
             </Box>
           </Box>
-          <Box sx={{ width: '50%' }}>
+          <Box sx={{ }}>
             <Typography sx={{ fontFamily: 'Inter Tight', fontSize: '16px', fontWeight: 500, mt: 1 }}>
               Quick Navigation
             </Typography>
@@ -97,11 +103,29 @@ export default function ClosingSection() {
             </Typography>
           </Box>
         </Box>
-
-
-        <Box sx={{ width: '50%', pl: 18, display:'flex',justifyContent:'start',flexDirection:'column'}}>
+        <Box     sx={{
+      flex: '0 0 24%', // default at 1440px
+      bgcolor: 'lightgreen',
+      '@media (max-width:1440px)': {
+        flex: '0 0 15%', // shrink at 1440px
+      },
+      '@media (max-width:1000px)': {
+        flex: '0 0 10%', // shrink at 600px
+      },
+      '@media (max-width:800px)': {
+        display:'none'
+      },
+    }}>
+        </Box>
+        <Box sx={{flex:1,display:'flex',justifyContent:'start',flexDirection:'column','@media (max-width:800px)': {
+      width: '100%'},}}>
           <Typography sx={{
-            fontFamily: 'Delight', fontSize: '40px', fontWeight: 500, lineHeight: '140%', WebkitBackgroundClip: "text",
+            fontFamily: 'Delight', fontSize: {sm:'1.64rem',md:'1.943rem',lg:'2.5rem',
+              '@media (max-width:800px)': {
+                fontSize:'2.74rem',
+                whiteSpace:'pre-wrap'
+      },
+            }, fontWeight: 500, lineHeight: '140%', WebkitBackgroundClip: "text",
             backgroundClip: "text",
             backgroundImage: "linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(0, 17, 255, 1) 200%)",
             backgroundRepeat: "no-repeat",

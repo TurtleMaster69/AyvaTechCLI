@@ -13,12 +13,15 @@ export function Third_background({children,id}:BackgroundProps){
   return (
   <Box
     id={id}
-    sx={{
-          width: 1440,
-          height: 1000,
-          position: "relative",
-          alignItems: "center",
-        }}
+      sx={{
+        width:'100%',
+        Height:'auto',
+        position: "relative",
+        alignItems: "center",
+        display:'flex',
+        justifyContent:'center',
+        overflowX:'clip'
+      }}
   >
     {/* <LShape
     style={{
@@ -53,8 +56,10 @@ export function Third_background({children,id}:BackgroundProps){
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "start",
+          justifyContent:'start',
           height: "100%",
+          width:'100%',
+          maxWidth:1440
         }}
       >
         {children}

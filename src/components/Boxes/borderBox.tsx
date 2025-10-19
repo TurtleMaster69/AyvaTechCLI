@@ -9,9 +9,10 @@ interface BoxCardProps {
     justifyContent?: number | string; 
     pb?: number | string; 
     pt?: number | string; 
+    mb?: number | string; 
 }
 
-export default function boxes( {width, height, children,justifyContent="center", pb=0,pt=0}: BoxCardProps) {
+export default function boxes( {width, height, children,justifyContent="center", pb=0,pt=0,mb=0}: BoxCardProps) {
   return (
      <Box
         sx={{
@@ -21,6 +22,7 @@ export default function boxes( {width, height, children,justifyContent="center",
           pr:3,
           pt:pt,
           pb:pb,
+          mb:mb,
           background: "linear-gradient(to bottom left, rgba(255,255,255,0.05), rgba(255,255,255,0))",
           borderRadius: 3,
           outline: "2px solid rgba(255,255,255,0.05)",

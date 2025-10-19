@@ -23,7 +23,6 @@ export function ContactUs() {
       };
     }, []);
     return (
-    <ThemeProvider>
       <Stack
         sx={{
           width: "100%",
@@ -34,7 +33,6 @@ export function ContactUs() {
         <HeroSection/>
         <ClosingSection></ClosingSection>
       </Stack>
-    </ThemeProvider>
   );
 };
 

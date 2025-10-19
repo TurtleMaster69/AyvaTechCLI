@@ -24,7 +24,6 @@ export function Blog() {
     };
   }, []);
   return (
-    <ThemeProvider>
       <Stack
         sx={{
           width: "100%",
@@ -36,7 +35,6 @@ export function Blog() {
         <BlogContentSection/>
         <ClosingSection></ClosingSection>
       </Stack>
-    </ThemeProvider>
   );
 };
 

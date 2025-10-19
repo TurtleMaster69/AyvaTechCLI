@@ -27,7 +27,6 @@ export function ContactUs() {
       };
     }, []);
     return (
-    <ThemeProvider>
       <Stack
         sx={{
           width: "100%",
@@ -38,12 +37,10 @@ export function ContactUs() {
         <HeroSection/>
         <WhereWeCanHelpSection/>
         <HowWeWorkSection/>
-        <WhySection></WhySection>
         <PictureSection></PictureSection>
         <BlogSection></BlogSection>
         <ClosingSection></ClosingSection>
       </Stack>
-    </ThemeProvider>
   );
 };
 

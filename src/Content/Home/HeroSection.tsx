@@ -1,16 +1,37 @@
-import {Box, Button } from "@mui/material";
+import {Box, Button, useMediaQuery } from "@mui/material";
 import Background from "../../backgrounds/main_background"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Stack, Typography } from "@mui/material";
 import Conveyer from "../../components/conveyer";
 import ButtonPrimary from "../../components/Buttons/buttonPrimary";
-import Header from "../Header";
+import { appTheme } from "../ThemeProvider";
 
 export function HeroSection() {
+  const theme = appTheme
+  const isXs = useMediaQuery(theme.breakpoints.down('sm')); // xs and below
+  const isLg = useMediaQuery(theme.breakpoints.up('sm')); // lg and up
+  const isMd = useMediaQuery(theme.breakpoints.down('md'));
+    const isMdup = useMediaQuery(theme.breakpoints.up('md'));
+  let text;
+  if (isXs) {
+    text = "Download 20 quick automations";
+  } else if (isLg) {
+    text = "Download 20 quick automations you can use this month.";
+  }
+
+  let text1
+
+    if (isMd) {
+    text1 = "Organizations We've Trained";
+  } else if (isMdup) {
+    text1 = "Organizations\nWe've Trained";
+  }
+
   return (
     <Background>
-      <Header id={'homeHeader'}></Header>
+
+      <Box sx={{display:'flex',flexDirection:'column',alignItems: "center",justifyContent:{xs:'start',sm:'center'},height:{xs:700,sm:800,md:850}}}>
       <Button
       component="a"
   href="https://ash-speed.hetzner.com/100MB.bin"
@@ -18,13 +39,13 @@ export function HeroSection() {
           display: "inline-flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: 2,
-          px: 2,
-          py: 1.5,
+          gap: '1rem',
+          px: '1rem',
+          py: '0.5rem',
           bgcolor: "rgba(255, 255, 255, 0.08)",
           borderRadius: "999px",
           border: "2px solid rgba(255, 255, 255, 0.04)",
-          mt: 25,
+          mt: {xs:'8rem',sm:0},
           color: "#FFFFFF",
           "&:hover": {
           background: "linear-gradient(to bottom left, rgba(255,255,255,0.2), rgba(255,255,255,0.2))",
@@ -34,8 +55,8 @@ export function HeroSection() {
         <Stack direction="row" spacing={1} alignItems="center">
           <AutoAwesomeIcon
             sx={{
-              width: 20,
-              height: 20,
+              width: "1rem",
+              height: "1rem",
               color: "#ffffff",
             }}
           />
@@ -45,26 +66,26 @@ export function HeroSection() {
               fontFamily: "'Delight', Helvetica, Arial, sans-serif",
               fontWeight: 400,
               color: "#ffffff",
-              fontSize: "16px",
+              fontSize: {xs:'1rem',lg:"1rem"},
               textAlign: "center",
-              lineHeight: "24px",
+              lineHeight: "150%",
               whiteSpace: "nowrap",
             }}
           >
-            Download 20 quick automations you can use this month.
+            {text}
           </Typography>
+          <ArrowForwardIcon
+            sx={{
+                width: "1rem",
+                height: "1rem",
+              color: "#ffffff",
+            }}
+          />
         </Stack>
-
-        <ArrowForwardIcon
-          sx={{
-            width: 20,
-            height: 20,
-            color: "#ffffff",
-          }}
-        />
       </Button>
+
       <Stack spacing={7.5} alignItems="center" sx={{ overflow: "visible" }}>
-        <Stack spacing={0} alignItems="center" sx={{ maxWidth: 954, overflow: "visible" }}>
+        <Stack spacing={0} alignItems="center" sx={{ maxWidth: 1000, overflow: "visible" }}>
           <Typography
             variant="h1"
             sx={{
@@ -76,10 +97,11 @@ export function HeroSection() {
               WebkitTextFillColor: 'transparent',
               textAlign: "center",
               pb: 4,
-              mt: 6
+              mt: 6,
+              px:'1.5rem'
             }}
           >
-            Your business<br /> processes  on autopilot.
+            Your business<br /> processes on autopilot.
           </Typography>
 
           <Typography
@@ -88,33 +110,34 @@ export function HeroSection() {
               opacity: 0.8,
               fontFamily: "'Inter Tight', Helvetica",
               color: "#FFFFFF",
-              fontSize: "22px",
+              fontSize: {xs:'1rem',sm:'1.2rem',md:"1.375rem"},
               textAlign: "center",
-              lineHeight: "33px",
+              lineHeight: "150%",
+              px:{xs:'1rem',sm:'2rem',md:0}
             }}
           >
-            Because we approach automation through business outcomes-not just
-            technology.
+            Because we approach automation through business outcomes-not just technology.
             <br />
             Strategy. A skilled team. Intelligent solutions.
           </Typography>
         </Stack>
         <ButtonPrimary>Book a free consultation</ButtonPrimary>
       </Stack>
-      <Box sx={{width:'85%',display:'flex',justifyContent:'space-between',pt: 2, mt: 31, alignItems: "center", borderTop: "2px solid rgba(255, 255, 255, 0.02)", }} >
+      </Box>
+      <Box sx={{width:'85%',display:'flex',flexDirection:{xs:'column',md:'row'}, justifyContent:'space-between',pt: 2, alignItems: "center", borderTop: "2px solid rgba(255, 255, 255, 0.02)", }} >
         <Typography
           sx={{ // squish vertically
             transformOrigin: "center",
             fontFamily: "'Delight'",
             color: "white",
-            fontSize: "18px",
+            fontSize: "1rem",
             letterSpacing: 0,
             lineHeight: "25.2px",
+            whiteSpace:'pre-line',
+            pb:'1rem'
           }}
         >
-          Organizations
-          <br />
-          We've Trained
+          {text1}
         </Typography>
         <Conveyer></Conveyer>
       </Box>

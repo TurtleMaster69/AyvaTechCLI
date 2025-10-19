@@ -1,47 +1,50 @@
 
 import { type ReactNode } from "react";
-import {Box } from "@mui/material";
-import LShape from "../assets/png/shape.png";
+import { Box } from "@mui/material";
+import LShape from "../assets/png/background/shape_left.png";
 
-interface BackgroundProps{
-  children:ReactNode
+interface BackgroundProps {
+  children: ReactNode
 }
 
-export function First_background({children}:BackgroundProps){
+export function First_background({ children }: BackgroundProps) {
   return (
-  <Box
-    sx={{
-          width: 1440,
-          height: 1045,
-          position: "relative",
-          alignItems: "center",
-        }}
-  >
-    {/* <LShape
-    style={{
-            position: 'absolute',
-            bottom: 0,
-            left: -290,
-            width: 1300 ,
-            height: 900,
-            zIndex: 0,
-             transform: "translateZ()", backfaceVisibility: "hidden" 
-          }}
-    /> */}
-
-      <Box
-      component="img"
-      src={LShape}
-      alt="My PNG"
+    <Box
       sx={{
-        top:50,
-        left:0,
-        width:1025,
-        height: "auto",
-        borderRadius: 2,
-        position: 'absolute'
+        width: '100%',
+        Height: 'auto',
+        position: "relative",
+        alignItems: "center",
+        display: 'flex',
+        justifyContent: 'center',
+        overflowX: 'clip'
       }}
-    />
+    >
+      <Box
+        component="img"
+        src={LShape}
+        alt="My PNG"
+        sx={{
+          bottom: '50%',
+          left: "20%",
+          transform: 'translateX(-50%) translateY(50%)',
+          width: "100%",
+          maxHeight: 1100,
+          position: 'absolute',
+          '@media (max-width:1000px)': {
+            left:"50%",
+            width:'200%',
+            height:'70%',
+            transform: 'translateX(-50%) translateY(50%) rotate(20deg)',
+          },
+          '@media (max-width:600px)': {
+            left:"50%",
+            width:'500%',
+            height:'40%',
+            transform: 'translateX(-50%) translateY(50%) rotate(50deg)',
+          },
+        }}
+      />
 
       <Box
         sx={{
@@ -50,13 +53,15 @@ export function First_background({children}:BackgroundProps){
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "start",
+          justifyContent:'start',
           height: "100%",
+          width:'100%',
+          maxWidth:1440
         }}
       >
         {children}
       </Box>
-  </Box>
+    </Box>
   );
 };
 
