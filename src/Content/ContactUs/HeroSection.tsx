@@ -1,6 +1,5 @@
 import {Box, Typography } from "@mui/material";
 import Background from "../../backgrounds/sixth_background"
-import Header from "../Header";
 import ContactForm from "../../components/ContactForm";
 import StartSVG from  '../../components/SVG/star_shape'
 import BorderButton from "../../components/Buttons/borderButton";
@@ -17,8 +16,7 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 export function HeroSection() {
   return (
     <Background id={'contact-sectionw'}>
-      <Header id={'contactHeader'}></Header>
-      <Box sx={{display:"flex",flexDirection:'column',py:22,width:'100%',px:15} } >
+      <Box sx={{display:"flex",flexDirection:'column',pt:22,pb:{xs:5,sm:'10',md:22},width:'85%'} } >
         <Typography id='contact-section' variant="h2" sx={{textAlign: 'left',WebkitBackgroundClip: "text",
                         backgroundClip: "text",
                         backgroundImage: "linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(0, 17, 255, 1) 120%)",
@@ -26,12 +24,12 @@ export function HeroSection() {
                         WebkitTextFillColor: 'transparent',pb:'16px'}}>
           Contact Us
         </Typography>
-        <Typography sx={{fontFamily:'Delight',fontSize:'24px',width:569}}>
+        <Typography sx={{fontFamily:'Delight',fontSize:'24px',maxWidth:600}}>
           Let’s talk. Whether you’re curious about what AI can do for your business or you already have something in mind, we’d love to hear from you.
         </Typography>
       </Box>
       <Box
-      sx={{width:'100%',height:'100%',display:'flex',flexDirection:'row',px:15,}}>
+      sx={{width:'85%',height:'100%',display:'flex',flexDirection:{xs:'column',md:'row'}, gap:{xs:5,md:0}}}>
         <Box sx={{width:'100%',gap:2,display:'flex',flexDirection:'column'}}>
           <Typography  sx={{
             fontFamily:'Delight',
@@ -64,9 +62,11 @@ export function HeroSection() {
             </BorderButton>
 
         </Box>
-        <ContactForm>
+        <Box sx={{maxWidth:{xs:500,md:'100%'},width:'100%'}}>
+        <ContactForm >
           
         </ContactForm>
+        </Box>
       </Box>
     </Background>
   )

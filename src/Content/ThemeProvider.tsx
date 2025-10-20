@@ -6,7 +6,8 @@ import {
 import React from "react";
 import Delight from '../assets/delight-font-family/delight-vf.ttf';
 
-const appTheme = createTheme({
+// eslint-disable-next-line react-refresh/only-export-components
+export const appTheme = createTheme({
   palette: {
     primary: {
       main: "rgba(0, 17, 255, 1)",
@@ -26,23 +27,56 @@ const appTheme = createTheme({
       "100": "rgba(255, 255, 255, 1)",
     },
   },
+    breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 1000,
+      lg: 1300,
+      xl: 1536,
+    },
+  },
   typography: {
     fontFamily: "'Delight','Inter Tight',sans-serif",
     h1: {
       fontFamily: '"Delight", sans-serif',
-      fontSize: '94px',
+      fontSize: '5.875rem',
       fontWeight: 350,
       color: '#fff',
       letterSpacing: "-1%",
-      lineHeight: "80px",
+      lineHeight: "85%",
       overflow: "visible",
+      '@media (max-width:1000px)': {
+        fontSize: '5rem',
+        lineHeight: "85%",
+      },
+      '@media (max-width:600px)': {
+        fontSize: '4.2rem',
+        lineHeight: "85%",
+      },
+      '@media (max-width:450px)': {
+        fontSize: '3.3rem',
+        lineHeight: "85%",
+      },
     },
     h2: {
       fontFamily: '"Delight", sans-serif',
-      fontSize: '68px',
+      fontSize: '4.25rem',
       fontWeight: 380,
-      lineHeight: '80px',
+      lineHeight: '120%',
       letterSpacing: "0%",
+      '@media (max-width:1000px)': {
+        fontSize: '3.5rem',
+        lineHeight: "85%",
+      },
+      '@media (max-width:600px)': {
+        fontSize: '3rem',
+        lineHeight: "85%",
+      },
+      '@media (max-width:450px)': {
+        fontSize: '2.7rem',
+        lineHeight: "85%",
+      },
     },
     h3: {
       fontFamily: '"Delight", sans-serif',

@@ -5,11 +5,12 @@ import type { ReactNode } from "react";
 interface LinkProps{
     children?: ReactNode
     color?: string
+    ref?:string
 }
 
-export default function ArrowForwardLink({children,color= 'inherit'}:LinkProps) {
+export default function ArrowForwardLink({children,color= 'inherit',ref='/about'}:LinkProps) {
     return (
-        <Link href="/about" color={color} underline="hover" 
+        <Link href={ref} color={color} underline="hover" 
         sx={{
             display: "inline-flex",       
             alignItems: "center",     

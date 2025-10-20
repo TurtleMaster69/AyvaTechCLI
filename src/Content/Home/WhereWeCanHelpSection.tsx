@@ -93,34 +93,37 @@ export function WhereWeCanHelpSection() {
       variant='h2'
       sx={{
         textAlign: "center",
-        mt: 25
+        mt: {xs:10,sm:25}
       }}>
         Where We Can Help
 
       </Typography>
 
       <Box
-        sx={{
-          display: "inline-flex",
-          flexWrap: "wrap",
-          gap: 3,
-          alignItems: "flex-start",
-          justifyContent: "center",
-          width: "100%",
-          mt: 9,
-        }}
-      >
-
-        {/* Card 1 */}
-        {items.map((item, index) => (
-          <Boxes
-            key={index}
-            icon={item.icon}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
-      </Box>
+  sx={{
+    display: 'grid',
+    width: '85%',
+    maxWidth: 1440,
+    my: 9,
+    mb:{xs:10,sm:22},
+     gap: 2, // space between cards
+    gridTemplateColumns: {
+      xs: '1fr', // 1 column on extra-small screens
+      sm: 'repeat(2, 1fr)', // 2 columns on small screens
+      md: 'repeat(3, 1fr)', // 3 columns on medium screens
+      lg: 'repeat(3, 1fr)', // 4 columns on large screens
+    },
+  }}
+>
+  {items.map((item, index) => (
+    <Boxes
+      key={index}
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+    />
+  ))}
+</Box>
 
 
     </First_background>

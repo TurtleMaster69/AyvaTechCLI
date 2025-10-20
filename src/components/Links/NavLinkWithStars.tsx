@@ -9,10 +9,11 @@ const spin = keyframes`
 `;
 
 
-export default function NavLinkWithStars({ label, href,sectionId=undefined}: { label: string ,href:string,sectionId?:string}) {
+export default function NavLinkWithStars({ label, href,sectionId=undefined,starshover=true,handleClick}: { label: string ,href:string,sectionId?:string,starshover?:boolean,handleClick?:() => void}) {
   const scrollToSection = useScrollToSection();
   return (
     <Box
+    onClick={handleClick}
       sx={{
         position: "relative",
         display: "inline-flex",
@@ -21,7 +22,6 @@ export default function NavLinkWithStars({ label, href,sectionId=undefined}: { l
         justifyContent: "center",
         px: 2,
         py: 1,
-        cursor: "pointer",
         "&:hover .stars": {
           opacity: 1,
           animation: `${spin} 4s linear infinite`,
@@ -40,7 +40,7 @@ export default function NavLinkWithStars({ label, href,sectionId=undefined}: { l
         sx={{
           position: "absolute",
           top: "-25px", // controls distance above text
-          display: "flex",
+          display: starshover ? 'flex':'none',
           alignItems: "center",
           justifyContent: "center",
           width: "40px",
@@ -76,9 +76,10 @@ export default function NavLinkWithStars({ label, href,sectionId=undefined}: { l
 
       {/* Link text */}
       <Typography
+        onClick={handleClick}
         className="linktxt"
         sx={{
-          fontSize: "18px",
+          fontSize: {xl:"1.5rem",md:'1.085rem',lg:'1.5rem',xs:'1.6rem'},
           fontFamily: "'Delight-Regular', sans-serif",
           color: "white",
           transition: "color 0.3s",

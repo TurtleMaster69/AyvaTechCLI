@@ -8,8 +8,8 @@ description: string;
 }
 export default function boxesWithIcons({ icon, title, description }: BoxCardProps) {
   return (
-    <Boxes width={384} height = {240} justifyContent={"start"}>
-    <Box sx={{ display: "flex", flexDirection: "column", gap:3, mt:3}}>
+    <Boxes width={'100%'} height = {'100%'} justifyContent={"start"} mb={2} >
+    <Box sx={{ display: "flex", flexDirection: "column", gap:3, mt:3,mb:1}}>
 
         {/* <LightbulbOutlineIcon sx={{fontSize:32, 
             "& path": {

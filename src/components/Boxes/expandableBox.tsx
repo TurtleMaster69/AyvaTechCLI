@@ -7,26 +7,30 @@ interface ExpandableBoxProps {
   title: string;
   children: React.ReactNode;
   width?: number | string;
+  autoExpanded?:boolean
 }
 
-export default function ExpandableBox({ title, children, width = 600 }: ExpandableBoxProps) {
-  const [expanded, setExpanded] = useState(false);
+export default function ExpandableBox({ title, children,autoExpanded=false}: ExpandableBoxProps) {
+  const [expanded, setExpanded] = useState(autoExpanded);
 
   const toggleExpand = () => setExpanded((prev) => !prev);
 
   return (
     <Box
       sx={{
-        width,
+        display:'flex',
+        flex:1,
+        width:'100%',
         outlineOffset: "-2px",
         mb: 3,
         pb: 2,
         borderBottom: "3px solid rgba(255, 255, 255, 0.06)",
+        flexDirection:'column'
       }}
     >
       {/* Title row */}
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Typography sx={{ fontFamily: "'Delight', Helvetica",letterSpacing:'0%',fontSize: "20px", lineHeight:'120%',whiteSpace: "pre"}}>{title}</Typography>
+      <Box sx={{ display: "flex", width:'100%',justifyContent: "space-between", alignItems: "center" }}>
+        <Typography sx={{ fontFamily: "'Delight', Helvetica",letterSpacing:'0%',fontSize: "20px", lineHeight:'120%',whiteSpace: {xs:'break-spaces',md:'pre'}}}>{title}</Typography>
         <IconButton onClick={toggleExpand} size="small" >
           {expanded ? <RemoveIcon sx={{ color: "#fff" }}/> : <AddIcon sx={{ color: "#fff" }}/>}
         </IconButton>

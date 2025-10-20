@@ -16,11 +16,11 @@ export default function Footer() {
         <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.05)', borderTopWidth: 1,mb:5 }} />
       <Box sx={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-between',mb:6}}>
         <Typography
-          sx={{fontFamily:'Inter Tight', fontSize:'14px',letterSpacing:'0px',fontWeight:250}}
+          sx={{fontFamily:'Inter Tight', fontSize:{xs:'0.74rem',sm:'0.875rem'},letterSpacing:'0px',fontWeight:250,pr:2}}
         >
           © {new Date().getFullYear()} AYVA Tech. All rights reserved.
         </Typography>
-        <Typography sx={{fontFamily:'Inter Tight', fontSize:'14px',letterSpacing:'0px',fontWeight:250}}>
+        <Typography sx={{fontFamily:'Inter Tight', fontSize:{xs:'0.74rem',sm:'0.875rem'},letterSpacing:'0px',fontWeight:250}}>
         <Stack
           direction="row"
           justifyContent="center"

@@ -1,5 +1,5 @@
 import ForthBackground from '../../backgrounds/forth_background'
-import { Box, Typography } from '@mui/material'
+import { Box, styled, Typography } from '@mui/material'
 import ButtonPrimary from '../../components/Buttons/buttonPrimary'
 
 
@@ -12,53 +12,116 @@ import img6 from '../../assets/png/image6.png'
 import VerticalConveyor from '../../components/verticalConveyer'
 
 
-const images = [[img1,img2,img3,],[img4,img5,img6]]
+const images = [[img1, img2, img3,], [img4, img5, img6]]
+
+
+const StyledImage = styled('img')({
+    width:'100%',
+    height: '100%',
+    objectFit: 'cover',   // or "contain"
+    objectPosition: 'center',
+    borderRadius: 10
+});
+
 
 export default function PictureSection() {
     return (
         <ForthBackground>
             <Box sx={{
                 display: 'flex',
-                height: '100%',
-                width: '100%',
-                flexDirection: 'row',
-                lignItems: 'center',
+                height: 1000,
+                width: '85%',
+                flexDirection: 'column',
+                alignItems: 'center',
                 justifyContent: 'center',
-                p:15,
-                pt:0
+                pt: 0,
+                '@media (min-width:800px)': {
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'start',
+                },
             }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', height: '100%', width: '50%' }}>
-                    <Typography 
-                    variant='h3'
-                    sx={{
-                        WebkitBackgroundClip: "text",
-                        backgroundClip: "text",
-                        backgroundImage: "linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(0, 17, 255, 1) 100%)",
-                        backgroundRepeat: "no-repeat",
-                        WebkitTextFillColor: 'transparent',
-                        pb: 2.5,
-                        textAlign: 'left',
-                    }}>
+                <Box sx={{
+                    textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', height: '100%', flex: 0, width: '100%', '@media (min-width:800px)': {
+                        flex: 1,
+                        mr: 5
+                    },
+                }}>
+                    <Typography
+                        variant='h3'
+                        sx={{
+                            WebkitBackgroundClip: "text",
+                            backgroundClip: "text",
+                            backgroundImage: "linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(0, 17, 255, 1) 100%)",
+                            backgroundRepeat: "no-repeat",
+                            WebkitTextFillColor: 'transparent',
+                            pb: 2.5,
+                            textAlign: 'left',
+                        }}>
                         500+
                     </Typography>
                     <Typography sx={{
-                        pb: 8, 
+                        pb: 8,
                         fontFamily: "'Inter Tight', Helvetica",
                         color: "#FFFFFF",
-                        fontSize: "30px",
-                        lineHeight: "33px", 
+                        fontSize: {xs:'1.5rem',md:"1.875rem"},
+                        lineHeight: "110%",
                         textAlign: 'left'
                     }}>
                         Horus of teaching experience in <br /> the field of artificial intelligence
                     </Typography>
-                    <Box>
+                    <Box sx={{
+                        display: "none", '@media (min-width:800px)': {
+                            display: 'flex'
+                        },
+                    }}>
+                        <ButtonPrimary>
+                            Boox a free consulation
+                        </ButtonPrimary>
+                    </Box>
+                </Box>
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', justifyContent: 'center', alignItems: 'left', height: '100%', width: { xs: '47.4%', lg: '40%' } }}>
+                    <VerticalConveyor allImages={images}></VerticalConveyor>
+                </Box>
+
+
+                <Box
+                    sx={{
+                        display: { xs: 'flex', md: 'none' },
+                        gap: 1,
+                        py: 1,
+                        px: 3,
+                        overflow: 'auto',
+                        width: '100%',
+                        scrollSnapType: 'x mandatory',
+                        '& > *': {
+                            scrollSnapAlign: 'center',
+                        },
+                        maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+                    }}
+                >
+                    {images.map((item) => (
+                        item.map((img) => (
+                            <Box  sx={{
+          my: 3,
+          flex: '0 0 90%', // \U0001f448 makes each child take 80% of parent width
+          width: '90%',
+          maxWidth:250
+        }}>
+                                <StyledImage src={img} alt="icon" />
+                            </Box>
+                        ))
+                    ))}
+                </Box>
+                <Box sx={{ alignItems:'left', width:'100%', mt:5,
+                    display: "flex", sm: 'flex', '@media (min-width:800px)': {
+                        display: 'none'
+                    },
+                }}>
                     <ButtonPrimary>
                         Boox a free consulation
                     </ButtonPrimary>
-                    </Box>
-                </Box>
-                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'left', height: '100%', width: '50%' }}>
-                    <VerticalConveyor allImages={images}></VerticalConveyor>
                 </Box>
             </Box>
         </ForthBackground>

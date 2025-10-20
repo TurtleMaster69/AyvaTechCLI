@@ -2,8 +2,9 @@
 import { type ReactNode } from "react";
 import {Box } from "@mui/material";
 
-import SShape from '../assets/png/star.png';
-import S1Shape from '../assets/png/star1.png';
+import SShape from '../assets/png/background/star1.png';
+import S1Shape from '../assets/png/background/star2.png';
+import LShape from "../assets/png/background/shape_left.png";
 interface BackgroundProps{
   children:ReactNode
 }
@@ -11,60 +12,87 @@ export function SecondBackground({children}:BackgroundProps){
   return (
   <Box
     sx={{
-          width: 1440,
-          height: 950,
-          position: "relative",
-          alignItems: "center",
-        }}
+        width: '100%',
+        Height: 'auto',
+        position: "relative",
+        alignItems: "center",
+        display: 'flex',
+        justifyContent: 'center',
+        overflowX:'clip'
+      }}
   >
-    {/* <SShape
-    style={{
-            position: 'absolute',
-            top: -250,
-            left: 700,
-            width: 1300 ,
-            height: 1200,
-            zIndex: 0,
-             transform: "translateZ(0)", backfaceVisibility: "hidden" 
-          }}
-    />
-
-    <S1Shape
-    style={{
-            position: 'absolute',
-            top: 10,
-            left: -400,
-            width: 1300 ,
-            height: 1400,
-            zIndex: 0,
-             transform: "translateZ(0)", backfaceVisibility: "hidden" 
-          }}
-    /> */}
     <Box
       component="img"
       src={SShape}
       alt="My PNG"
       sx={{
-        top:-350,
-        right:0,
-        width:985,
+          bottom: '55%',
+          left: "90%",
+          transform: 'translateX(-50%) translateY(50%)',
+          width: "90%",
         height: "auto",
         borderRadius: 2,
-        position: 'absolute'
+        position: 'absolute',
+                  '@media (max-width:1000px)': {
+
+            opacity:0,
+          },
+          '@media (max-width:600px)': {
+
+            opacity:0,
+          },
       }}
     /><Box
       component="img"
       src={S1Shape}
       alt="My PNG"
       sx={{
-        top:0,
-        left:0,
-        width:985,
+          bottom: '25%',
+          left: "20%",
+          transform: 'translateX(-50%) translateY(50%)',
+          width: "80%",
         height: "auto",
         borderRadius: 2,
-        position: 'absolute'
+        position: 'absolute',
+                  '@media (max-width:1000px)': {
+
+            opacity:0,
+          },
+          '@media (max-width:600px)': {
+
+            opacity:0,
+          },
       }}
     />
+
+          <Box
+        component="img"
+        src={LShape}
+        alt="My PNG"
+        sx={{
+          opacity:0,
+          bottom: '50%',
+          left: "20%",
+          transform: 'translateX(-50%) translateY(50%)',
+          width: "100%",
+          maxHeight: 1100,
+          position: 'absolute',
+          '@media (max-width:1000px)': {
+            left:"50%",
+            width:'200%',
+            height:'70%',
+            transform: 'translateX(-50%) translateY(50%) rotate(20deg)',
+            opacity:1,
+          },
+          '@media (max-width:600px)': {
+            left:"50%",
+            width:'500%',
+            height:'70%',
+            transform: 'translateX(-50%) translateY(50%) rotate(30deg)',
+            opacity:1,
+          },
+        }}
+      />
 
   
 
@@ -75,8 +103,10 @@ export function SecondBackground({children}:BackgroundProps){
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "start",
+          justifyContent:'start',
           height: "100%",
+          width:'100%',
+          maxWidth:1440
         }}
       >
         {children}

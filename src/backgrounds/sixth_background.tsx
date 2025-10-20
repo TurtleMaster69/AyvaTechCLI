@@ -2,7 +2,7 @@
 import { type ReactNode } from "react";
 import {Box } from "@mui/material";
 
-import SShape from '../assets/png/star3.png';
+import SShape from '../assets/png/background/star1.png';
 interface BackgroundProps{
   children:ReactNode
   id:string
@@ -11,12 +11,15 @@ export function SecondBackground({children,id}:BackgroundProps){
   return (
   <Box
     id={id}
-    sx={{
-          width: 1440,
-          height: 1150,
-          position: "relative",
-          alignItems: "center",
-        }}
+      sx={{
+        width:'100%',
+        Height:'auto',
+        position: "relative",
+        alignItems: "center",
+        display:'flex',
+        justifyContent:'center',
+        overflowX:'clip'
+      }}
   >
     {/* <SShape
     style={{
@@ -46,14 +49,23 @@ export function SecondBackground({children,id}:BackgroundProps){
       src={SShape}
       alt="My PNG"
       sx={{
-        top:0,
-        right:0,
-        width:937,
-        height: "auto",
-        borderRadius: 2,
-        position: 'absolute'
+          bottom: '60%',
+          right: '-25%',
+          transform: 'translateX(0%) translateY(50%) rotate(15deg)',
+          width: "90%",
+          height:'120%',
+          borderRadius: 2,
+        position: 'absolute',
+          //         '@media (max-width:1000px)': {
+
+          //   opacity:0,
+          // },
+          // '@media (max-width:600px)': {
+
+          //   opacity:0,
+          // },
       }}
-    /> 
+    />
 
       <Box
         sx={{
@@ -62,8 +74,10 @@ export function SecondBackground({children,id}:BackgroundProps){
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "start",
+          justifyContent:'start',
           height: "100%",
+          width:'100%',
+          maxWidth:1440
         }}
       >
         {children}

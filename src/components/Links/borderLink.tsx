@@ -11,8 +11,8 @@ interface BorderLinkProps{
 
 export default function borderLink({title,content,type,value}:BorderLinkProps) {
     return (
-        <BorderButton width={470} height={"100%"} pb={5} pt={5} type={type} value={value}>
-            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start",width:310 }}>
+        <BorderButton width={'100%'} height={"100%"} pb={5} pt={5} type={type} value={value}>
+            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start",width:'100%',pr:5 }}>
                 <Typography sx={{
                     fontFamily: "'Delight', Helvetica",
                     fontSize: "32px",
@@ -23,7 +23,7 @@ export default function borderLink({title,content,type,value}:BorderLinkProps) {
                     backgroundRepeat: "no-repeat",
                     WebkitTextFillColor: 'transparent',
                     lineHeight: "100%",
-                    pb: 2
+                    pb: 2,
                 }}>
                     {title}
                 </Typography>

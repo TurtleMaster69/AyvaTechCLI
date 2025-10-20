@@ -10,12 +10,15 @@ interface BackgroundProps{
 export function ForthBackground({children}:BackgroundProps){
   return (
   <Box
-    sx={{
-          width: 1440,
-          height: 1250,
-          position: "relative",
-          alignItems: "center",
-        }}
+      sx={{
+        width:'100%',
+        Height:'auto',
+        position: "relative",
+        alignItems: "center",
+        display:'flex',
+        justifyContent:'center',
+        overflowX:'clip'
+      }}
   >
     {/* <LShape
     style={{
@@ -35,8 +38,10 @@ export function ForthBackground({children}:BackgroundProps){
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "start",
+          justifyContent:'start',
           height: "100%",
+          width:'100%',
+          maxWidth:1440
         }}
       >
         {children}
