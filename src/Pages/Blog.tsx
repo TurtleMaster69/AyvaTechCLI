@@ -1,41 +1,31 @@
-import { Stack } from "@mui/material";
-import { ThemeProvider } from "../Content/ThemeProvider";
-import ClosingSection from "../Content/Home/ClosingSection";
-import TitleSection from "../Content/Blog/TitleSection";
-import { useEffect } from "react";
-import BlogContentSection from "../Content/Blog/BlogContentSection";
+import { Box, Typography } from '@mui/material';
+import PostCard from '../components/Boxes/BlogBox';
+import Blogs from '../assets/blogs/blogs.json'
+import PaginatedBox from '../components/Boxes/paginatedBox';
+import ClosingSection from '../Content/Home/ClosingSection';
 
 
-export function Blog() {
-      useEffect(() => {
-    const centerHorizontally = () => {
-      const docWidth = document.body.scrollWidth;
-      const winWidth = window.innerWidth;
-      const scrollLeft = (docWidth - winWidth) / 2;
-      window.scrollTo({ left: scrollLeft });
-    };
 
-    window.addEventListener('resize', centerHorizontally);
-    window.addEventListener('load', centerHorizontally);
 
-    return () => {
-      window.removeEventListener('resize', centerHorizontally);
-      window.removeEventListener('load', centerHorizontally);
-    };
-  }, []);
-  return (
-      <Stack
-        sx={{
-          width: "100%",
-          position: "relative",
-          alignItems: "center"
-        }}
-      >
-        <TitleSection/>
-        <BlogContentSection/>
-        <ClosingSection></ClosingSection>
-      </Stack>
-  );
-};
-
-export default Blog;
+export default function HomePage() {
+    const blogs = Blogs.items
+    const components = blogs.map((blog) => (
+                        <PostCard
+                            blog={blog}
+                        />
+                ))
+    return (
+        <Box sx={{width:'100%',display:'flex',flexDirection:'column',alignItems:'center'}}>
+            <Box sx={{maxWidth:1440,width:'85%',mt:22}}>
+            <Typography variant="h4" gutterBottom>
+                Latest Posts
+            </Typography>
+            <PaginatedBox
+            components={components}
+            itemsPerRow={4}
+            />
+            </Box>
+        <ClosingSection/>
+        </Box>
+    );
+}

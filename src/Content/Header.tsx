@@ -11,7 +11,7 @@ import RShape from '../assets/png/background/strong.png'
 import { appTheme } from "./ThemeProvider";
 
 
-const pages = [["About Us", '/home', 'why-us-section'], ["Why Us", '/home', 'why-us-section'], ["Blog", '/blog'], ["Contact", '/contact']]
+const pages = [["About Us", '/home', 'howwework'], ["Why Us", '/home', 'howwework'], ["Blog", '/blog'], ["Contact", '/contact']]
 
 export default function Header({ ids }: { ids: string }) {
     const [language, setLanguage] = useState("en");
@@ -234,7 +234,7 @@ export default function Header({ ids }: { ids: string }) {
 
                 {/* Center: Nav links */}
                 <Stack direction="row" spacing={4} sx={{ alignItems: "center", position: 'absolute', left: '50%', transform: "translateX(-50%)", display: { xs: 'none', md: 'revert' } }}>
-                    {[["About Us", '/home', 'why-us-section'], ["Why Us", '/home', 'why-us-section'], ["Blog", '/blog'], ["Contact", '/contact']].map((item) => (
+                    {pages.map((item) => (
                         <NavLinkWithStars label={item[0]} href={item[1]} sectionId={item[2]}>
                         </NavLinkWithStars>
                     ))}

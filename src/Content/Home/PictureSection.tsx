@@ -16,7 +16,7 @@ const images = [[img1, img2, img3,], [img4, img5, img6]]
 
 
 const StyledImage = styled('img')({
-    width: 250,
+    width:'100%',
     height: '100%',
     objectFit: 'cover',   // or "contain"
     objectPosition: 'center',
@@ -97,14 +97,18 @@ export default function PictureSection() {
                         '& > *': {
                             scrollSnapAlign: 'center',
                         },
-                        '::-webkit-scrollbar': { display: 'none' },
                         maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
                     }}
                 >
                     {images.map((item) => (
                         item.map((img) => (
-                            <Box sx={{ my: 3 }}>
+                            <Box  sx={{
+          my: 3,
+          flex: '0 0 90%', // \U0001f448 makes each child take 80% of parent width
+          width: '90%',
+          maxWidth:250
+        }}>
                                 <StyledImage src={img} alt="icon" />
                             </Box>
                         ))

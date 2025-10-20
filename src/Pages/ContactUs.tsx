@@ -1,6 +1,5 @@
 import { Stack } from "@mui/material";
 import { HeroSection } from "../Content/ContactUs/HeroSection";
-import { ThemeProvider } from "../Content/ThemeProvider";
 import ClosingSection from "../Content/Home/ClosingSection";
 import { useEffect } from "react";
 

@@ -24,7 +24,6 @@ export default function borderLink({title,content,type,value}:BorderLinkProps) {
                     WebkitTextFillColor: 'transparent',
                     lineHeight: "100%",
                     pb: 2,
-                    whiteSpace:'nowrap'
                 }}>
                     {title}
                 </Typography>
@@ -34,7 +33,6 @@ export default function borderLink({title,content,type,value}:BorderLinkProps) {
                     letterSpacing: "0px",
                     lineHeight: "100%",
                     textAlign: "left",
-                    whiteSpace:'pre'
                 }}>
                     {content}
                 </Typography>

@@ -29,7 +29,7 @@ export default function ClosingSection() {
               textAlign: "center",
               overflow: "visible",
               lineHeight: '140%',
-              mt: 32
+              mt: {xs:20,sm:32}
             }}
           >
             Let the system handle the <br></br> routine and your team focus <br></br> on what matters.
@@ -45,8 +45,7 @@ export default function ClosingSection() {
         alignItems: "center",
         justifyContent: "space-between",
         width: "85%",
-        mt: 25,
-        mb:22,
+        my:{xs:10,sm:22},
         '@media (max-width:800px)': {
         flexDirection:'column',
         gap:5
@@ -123,6 +122,10 @@ export default function ClosingSection() {
             fontFamily: 'Delight', fontSize: {sm:'1.64rem',md:'1.943rem',lg:'2.5rem',
               '@media (max-width:800px)': {
                 fontSize:'2.74rem',
+                whiteSpace:'pre-wrap'
+      },
+      '@media (max-width:600px)': {
+                fontSize:'1.74rem',
                 whiteSpace:'pre-wrap'
       },
             }, fontWeight: 500, lineHeight: '140%', WebkitBackgroundClip: "text",

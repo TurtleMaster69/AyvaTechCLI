@@ -20,8 +20,12 @@ export function useScrollToSection() {
       navigate(path); // navigate first
       // scroll after navigation
       requestAnimationFrame(() => scrollToSection(sectionId));
+      console.log(sectionId)
+      console.log(path)
     } else {
       navigate(path);
+      console.log(sectionId)
+      console.log(path)
     }
   };
 

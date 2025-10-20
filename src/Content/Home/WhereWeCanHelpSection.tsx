@@ -93,7 +93,7 @@ export function WhereWeCanHelpSection() {
       variant='h2'
       sx={{
         textAlign: "center",
-        mt: 25
+        mt: {xs:10,sm:25}
       }}>
         Where We Can Help
 
@@ -105,7 +105,7 @@ export function WhereWeCanHelpSection() {
     width: '85%',
     maxWidth: 1440,
     my: 9,
-    mb:22,
+    mb:{xs:10,sm:22},
      gap: 2, // space between cards
     gridTemplateColumns: {
       xs: '1fr', // 1 column on extra-small screens

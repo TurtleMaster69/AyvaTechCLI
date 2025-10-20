@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box} from '@mui/material';
 import { keyframes, styled } from '@mui/system';
 import Icon1  from '../assets/svg/Podjetja/Layer_1-1.svg'

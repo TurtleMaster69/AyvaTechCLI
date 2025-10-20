@@ -23,17 +23,6 @@ export function Third_background({children,id}:BackgroundProps){
         overflowX:'clip'
       }}
   >
-    {/* <LShape
-    style={{
-            position: 'absolute',
-            bottom: 0,
-            left: -290,
-            width: 1300 ,
-            height: 900,
-            zIndex: 0,
-             transform: "translateZ()", backfaceVisibility: "hidden" 
-          }}
-    /> */}
 
       <Box
       component="img"

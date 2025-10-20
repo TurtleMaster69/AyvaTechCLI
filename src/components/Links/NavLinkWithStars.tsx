@@ -13,6 +13,7 @@ export default function NavLinkWithStars({ label, href,sectionId=undefined,stars
   const scrollToSection = useScrollToSection();
   return (
     <Box
+    onClick={handleClick}
       sx={{
         position: "relative",
         display: "inline-flex",

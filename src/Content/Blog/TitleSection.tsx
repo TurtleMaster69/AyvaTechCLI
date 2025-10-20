@@ -1,8 +1,19 @@
 import { Box, Typography } from '@mui/material'
-import BlogImg from '../../assets/png/BlogImage.png'
-import Header from '../Header'
+import Blogs from '../../assets/blogs/blogs.json'
+import Images from '../../assets/blogs/images_collection.json'
+import {formatDate} from '../../components/Utils/formatDate'
 
-export default function TitleSection() {
+export default function TitleSection({id}:{id:string}) {
+    const blogs=Blogs.items
+    const blog = blogs.find((b) => b.id === id);
+    const resolveImage = (id: string): string => {
+    const img = Images.items.find((i) => i.id === id);
+    return img ? `${import.meta.env.BASE_URL}images/${img.image}` : "";
+  };
+  
+  if (!blog) return <Typography>No blog found</Typography>;
+
+
   return (
     <Box 
     sx={{width:1440,height:514,
@@ -13,11 +24,10 @@ export default function TitleSection() {
           alignItems: "center",
           justifyContent: "start",
     }}>
-    <Header id={'blogHeader'}/>
   {/* Background Image */}
     <Box
         component="img"
-        src={BlogImg}
+        src={resolveImage(blog.thumbnail)}
         alt="My PNG"
         sx={{
         position: "absolute",
@@ -52,7 +62,7 @@ export default function TitleSection() {
                         backgroundImage: "linear-gradient(165deg, rgba(255, 255, 255, 1) 0%, rgba(0, 17, 255, 1) 290%)",
                         backgroundRepeat: "no-repeat",
                         WebkitTextFillColor: 'transparent',pb:'44px', maxWidth:'60%',letterSpacing:'-1%',whiteSpace: 'pre-line'}}>
-          {"How AI Is changing \n Work \u2014 Not Replacing it"}
+          {blog?.title}
         </Typography>
         <Typography sx={{textAlign: 'right',
                         fontFamily:'Inter Tight',
@@ -60,7 +70,7 @@ export default function TitleSection() {
                         fontSize:20,pb:'35px',
                         color:'rgba(236, 241, 255, 0.78)',
                         fontWeight:400}}>
-          Jan 12th, 2025
+          {formatDate(blog?.created)}
         </Typography>
         </Box>
     </Box>

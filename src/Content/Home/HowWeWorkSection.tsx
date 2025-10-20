@@ -29,14 +29,16 @@ const linkItems = [{
 export default function HowWeWorkSection() {
     return (
         <SecondBackground>
-            <Box sx={{
+            <Box 
+            id='howwework'
+            sx={{
                 display: "flex",
                 gap: {xs:0,md:10},
                 flexDirection: { xs: "column", md: 'row' },
                 alignItems: "start",
                 justifyContent: "center",
                 width: "85%",
-                my: 11.5,
+                my: {xs:5,sm:11.5},
             }}
             >
                 <Stack sx={{ display: { xs: 'none', md: "flex" }, flex: 1, justifyContent: "center", alignItems: "center", gap: 1.5,width:'50%'}}>
@@ -93,7 +95,7 @@ export default function HowWeWorkSection() {
                             gap: 2,       // spacing between boxes
                         }}
                     >
-                        <ExpandableBox autoExpanded={true} title={"01\t\tFrom conversation to insight"}>
+                        <ExpandableBox autoExpanded={true} title={"01\tFrom conversation to insight"}>
                             <Typography sx={{ fontFamily: "'Delight-Regular', Helvetica" }}>
                                 This is the expanded content for Box 1.
                             </Typography>
@@ -122,13 +124,17 @@ export default function HowWeWorkSection() {
                         '& > *': {
                             scrollSnapAlign: 'center',
                         },
-                        '::-webkit-scrollbar': { display: 'none' },
                         maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
                         WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
                     }}
                 >
                     {linkItems.map((item, index) => (
-                        <Box sx={{ py: 3 }}>
+                        <Box  sx={{
+          my: 3,
+          flex: '0 0 80%', // \U0001f448 makes each child take 80% of parent width
+          width: '90%',
+          maxWidth:400
+          }}>
                             <BorderLink
                                 key={index}
                                 title={item.title}

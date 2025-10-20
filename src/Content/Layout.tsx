@@ -22,7 +22,7 @@ export default function Layout() {
           alignItems: "center",
         }}
       >
-        <Header id={'homeHeader'}></Header>
+        <Header ids={'homeHeader'}></Header>
         {/* Main routed content goes here */}
         <Outlet />
       </Box>
