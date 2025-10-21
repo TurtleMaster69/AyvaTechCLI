@@ -10,6 +10,7 @@ import img4 from '../../assets/png/image4.png'
 import img5 from '../../assets/png/image5.png'
 import img6 from '../../assets/png/image6.png'
 import VerticalConveyor from '../../components/verticalConveyer'
+import { useTranslation } from 'react-i18next'
 
 
 const images = [[img1, img2, img3,], [img4, img5, img6]]
@@ -25,6 +26,7 @@ const StyledImage = styled('img')({
 
 
 export default function PictureSection() {
+    const {t}=useTranslation()
     return (
         <ForthBackground>
             <Box sx={{
@@ -66,9 +68,13 @@ export default function PictureSection() {
                         color: "#FFFFFF",
                         fontSize: {xs:'1.5rem',md:"1.875rem"},
                         lineHeight: "110%",
-                        textAlign: 'left'
+                        textAlign: 'left',
+                        whiteSpace:'pre-line',
+                        '@media (max-width:800px)': {
+                            pb:2
+                        },
                     }}>
-                        Horus of teaching experience in <br /> the field of artificial intelligence
+                        {t('home.picture.subtitle')}
                     </Typography>
                     <Box sx={{
                         display: "none", '@media (min-width:800px)': {
@@ -76,7 +82,7 @@ export default function PictureSection() {
                         },
                     }}>
                         <ButtonPrimary>
-                            Boox a free consulation
+                            {t('button.contact')}
                         </ButtonPrimary>
                     </Box>
                 </Box>
@@ -102,8 +108,8 @@ export default function PictureSection() {
                     }}
                 >
                     {images.map((item) => (
-                        item.map((img) => (
-                            <Box  sx={{
+                        item.map((img,index) => (
+                            <Box key={index} sx={{
           my: 3,
           flex: '0 0 90%', // \U0001f448 makes each child take 80% of parent width
           width: '90%',
@@ -120,7 +126,7 @@ export default function PictureSection() {
                     },
                 }}>
                     <ButtonPrimary>
-                        Boox a free consulation
+                        {t('button.contact')}
                     </ButtonPrimary>
                 </Box>
             </Box>

@@ -4,7 +4,6 @@ import { WhereWeCanHelpSection } from "../Content/Home/WhereWeCanHelpSection";
 import HowWeWorkSection from "../Content/Home/HowWeWorkSection";
 import PictureSection from "../Content/Home/PictureSection";
 import ClosingSection from "../Content/Home/ClosingSection";
-import BlogSection from "../Content/Home/BlogSection";
 import { useEffect } from "react";
 
 export function ContactUs() {
@@ -36,7 +35,7 @@ export function ContactUs() {
         <WhereWeCanHelpSection/>
         <HowWeWorkSection/>
         <PictureSection></PictureSection>
-        <BlogSection></BlogSection>
+        {/* <BlogSection></BlogSection> */}
         <ClosingSection></ClosingSection>
       </Stack>
   );

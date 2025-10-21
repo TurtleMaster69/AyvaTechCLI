@@ -1,0 +1,144 @@
+{
+    "home": {
+        "hero": {
+            "title": "Your business\nprocesses on autopilot.",
+            "subtitle": "Because we approach automation through business outcomes-not just technology.\nStrategy. A skilled team. Intelligent solutions.",
+            "download": {
+                "short": "Download 20 quick automations",
+                "long": "Download 20 quick automations you can use this month."
+            },
+            "organization": {
+                "short": "Organizations We've Trained",
+                "long": "Organizations\nWe've Trained"
+            }
+        },
+        "blog": {
+            "title": "Blog & News"
+        },
+        "closing": {
+            "title": "Let the system handle the routine and your team focus on what matters.",
+            "navigation": {
+                "title": "Quick Navigation",
+                "about-us": "About us",
+                "why-us": "Why us",
+                "blog": "Blog",
+                "contact": "Contact"
+            },
+            "potential": {
+                "title": "Ready to Unleash your\nCompany's Full Potential?",
+                "consultation": "Book a consultation",
+                "download": "Download the guide"
+            }
+        },
+        "how": {
+            "link": {
+                "1": {
+                    "title": "10-40%",
+                    "content": "productivity uplift in routine tasks"
+                },
+                "2": {
+                    "title": "$1.36 return",
+                    "content": "for every $1 invested over three years"
+                },
+                "3": {
+                    "title": "Up to 2x",
+                    "content": "faster project delivery"
+                },
+                "4": {
+                    "title": "95%",
+                    "content": "of generated AI implementations\nshow no measurable P%L impact"
+                },
+                "5": {
+                    "title": "Only 36%",
+                    "content": "of employees feel adequately trained\nto use AI tools at work"
+                }
+            },
+            "title": "How We Work",
+            "expandable": {
+                "1": {
+                    "title": "01 \tFrom conversation to insight",
+                    "description": "We break down your challenges and identify where the most time is lost. Outcome: a clear picture of where automation will truly move the needle."
+                },
+                "2": {
+                    "title": "02\tFrom idea to plan",
+                    "description": "Based on the analysis we create a concrete plan: what will be automated, how the process will run and what results to expect."
+                },
+                "3": {
+                    "title": "03\tFrom knowhow to practice",
+                    "description": "We train your team, workshops on your real cases, playbooks and safety guidelines. The goal is regular and safe use of the implemented solutions."
+                },
+                "4": {
+                    "title": "04\tFrom prototype to production",
+                    "description": "We build an MVP, test it on your case and iterate together throughout the process."
+                },
+                "5": {
+                    "title": "05\tFrom rollout to support",
+                    "description": "We monitor results and ensure stability and updates. The partnership doesn't end with implementation—it starts there."
+                }
+            }
+        },
+        "picture": {
+            "subtitle": "Horus of teaching experience in\nthe field of artificial intelligence"
+        },
+        "where": {
+            "title": "Where We Can Help",
+            "cards": {
+                "1": {
+    "title": "AI Training and Custom Workshops",
+    "content": "We tailor the program to your goals and processes \u2014 from introductory lectures to hands-on workshops based on your real cases. Teams gain practical tools, safe usage habits, and clear processes they can implement the very next day."
+  },
+  "2": {
+    "title": "Automation of Routine Tasks",
+    "content": "We automate reports, data transfers, calendars, and reminders so that routines run on their own. This reduces errors, shortens manual clicks, and frees up your team\u2019s time for higher-value work."
+  },
+  "3": {
+    "title": "AI-Supported Sales Processes",
+    "content": "We set up a seamless flow from lead to order \u2014 qualification, proposals, CRM integrations, and automated follow-ups. Sales teams get timely reminders and next-step suggestions, while you gain higher conversion without extra manual work."
+  },
+  "4": {
+    "title": "AI-Driven Marketing",
+    "content": "We accelerate content and campaign creation \u2014 draft generation, publishing calendars, reports, and segmentation. AI assists with topic selection and timing, giving you consistent campaigns with clear, measurable results."
+  },
+  "5": {
+    "title": "Customer Support with AI Assistant",
+    "content": "We implement chatbots and knowledge bases for instant answers to common questions. Support teams are freed from routine tasks, response times improve, and complex cases get more attention."
+  },
+  "6": {
+    "title": "Custom AI Development and Integrations",
+    "content": "We connect AI with your systems and data \u2014 from analytics and recommendations to process automation. Our solutions are built modularly and securely, adapting to your needs and growing with your business."
+  }
+            }
+        }
+    },
+    "contact":{
+        "title":"Contact Us",
+        "subtitle":"Let's talk. Whether you're curious about what AI can do for your business or you already have something in mind, we'd love to hear from you.",
+        "form":{
+            "title":"What can we\nhelp you with?",
+            "subtitle":"LETS TALK",
+            "name-field":"name",
+            "email-field":"email",
+            "message-field":"message"
+        }
+    },
+    "footer": {
+        "rights": "AYVA Tech. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Notice",
+        "author": "Authors",
+        "terms": "Terms and Conditions"
+    },
+    "header":{
+        "navigation":{
+            "1":"About Us",
+            "2":"Why Us",
+            "3":"Blog",
+            "4":"Contact"
+        }
+    },
+    "button": {
+        "contact": "Book a free consultation",
+        "view-all": "View All",
+        "submit":"Send message"
+    }
+}

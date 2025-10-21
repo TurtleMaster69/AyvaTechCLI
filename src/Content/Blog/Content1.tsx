@@ -15,8 +15,7 @@ blog:{  blog_id: string;
 }
 
 export default function Content1({blog}:BlogComponent) {
-    console.log(blog)
-  
+
   if (!blog) return <Typography>No blog found</Typography>;
   return (
     <Box sx={{width:'100%',height:'auto',my:8}}>

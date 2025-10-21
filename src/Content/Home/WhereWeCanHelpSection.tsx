@@ -1,92 +1,92 @@
 import { Box, Typography } from '@mui/material';
 import First_background from '../../backgrounds/first_background';
-import LightbulbOutlineIcon from '@mui/icons-material/LightbulbOutline';
-import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
-import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import Boxes from '../../components/Boxes/boxesWithIcons'
+import { useTranslation } from 'react-i18next';
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
+import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
+import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
+import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined';
 export function WhereWeCanHelpSection() {
 
+
+
+  const {t} = useTranslation()  
   const items = [
     {
       icon: (
-        <LightbulbOutlineIcon
+        <GroupsOutlinedIcon
           sx={{
             fontSize: 32,
             "& path": { strokeWidth: 0.5, stroke: "#ffffff" },
           }}
         />
       ),
-      title: "From routine to efficiency",
-      description:
-        "Reports, data transfers, calendars, reminders. Hours of work become a single click—without errors or wasted time.",
+      title: t('home.where.cards.1.title'),
+      description:t('home.where.cards.1.content')
     },
     {
       icon: (
-        <BoltOutlinedIcon
+        <AccountTreeOutlinedIcon
           sx={{
             fontSize: 32,
             "& path": { strokeWidth: 0.5, stroke: "#ffffff" },
           }}
         />
       ),
-      title: "Power and precision",
-      description:
-        "Automation with real impact—streamlined processes, instant feedback, and measurable results.",
+     title: t('home.where.cards.2.title'),
+      description:t('home.where.cards.2.content')
     },
     {
       icon: (
-        <TimelineOutlinedIcon
+        <EventNoteOutlinedIcon
           sx={{
             fontSize: 32,
             "& path": { strokeWidth: 0.5, stroke: "#ffffff" },
           }}
         />
       ),
-      title: "Clear insights",
-      description:
-        "Visualize data effortlessly, stay ahead with actionable metrics, and drive smarter decisions every day.",
+     title: t('home.where.cards.3.title'),
+      description:t('home.where.cards.3.content')
     },
     {
       icon: (
-        <LightbulbOutlineIcon
+        <AddShoppingCartOutlinedIcon
           sx={{
             fontSize: 32,
             "& path": { strokeWidth: 0.5, stroke: "#ffffff" },
           }}
         />
       ),
-      title: "From routine to efficiency",
-      description:
-        "Reports, data transfers, calendars, reminders. Hours of work become a single click—without errors or wasted time.",
+     title: t('home.where.cards.4.title'),
+      description:t('home.where.cards.4.content')
     },
     {
       icon: (
-        <BoltOutlinedIcon
+        <SmartToyOutlinedIcon
           sx={{
             fontSize: 32,
             "& path": { strokeWidth: 0.5, stroke: "#ffffff" },
           }}
         />
       ),
-      title: "Power and precision",
-      description:
-        "Automation with real impact—streamlined processes, instant feedback, and measurable results.",
+     title: t('home.where.cards.5.title'),
+      description:t('home.where.cards.5.content')
     },
     {
       icon: (
-        <TimelineOutlinedIcon
+        <HandymanOutlinedIcon
           sx={{
             fontSize: 32,
             "& path": { strokeWidth: 0.5, stroke: "#ffffff" },
           }}
         />
       ),
-      title: "Clear insights",
-      description:
-        "Visualize data effortlessly, stay ahead with actionable metrics, and drive smarter decisions every day.",
+      title: t('home.where.cards.6.title'),
+      description:t('home.where.cards.6.content')
     },
-  ];
-
+  ]; 
   return (
     <First_background>
       <Typography 
@@ -95,7 +95,7 @@ export function WhereWeCanHelpSection() {
         textAlign: "center",
         mt: {xs:10,sm:25}
       }}>
-        Where We Can Help
+        {t('home.where.title')}
 
       </Typography>
 

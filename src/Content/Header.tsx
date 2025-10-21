@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Box, MenuItem, Select, Stack, Typography, IconButton, ClickAwayListener, Popper, Link, Slide, useMediaQuery } from "@mui/material";
+import { AppBar, Toolbar, Box, MenuItem, Select, Stack, Typography, IconButton, ClickAwayListener, Popper, Link, Slide, useMediaQuery, type SelectChangeEvent } from "@mui/material";
 import { useState } from "react";
 import AyvaLogo from '../assets/svg/AyvaLogo.svg'
 import LanguageIcon from '@mui/icons-material/Language';
@@ -9,12 +9,23 @@ import { useScrollToSection } from "../components/Utils/useScrollToSection";
 import React from "react";
 import RShape from '../assets/png/background/strong.png'
 import { appTheme } from "./ThemeProvider";
+import { useTranslation } from "react-i18next";
+import i18n from '../i18n';
 
 
-const pages = [["About Us", '/home', 'howwework'], ["Why Us", '/home', 'howwework'], ["Blog", '/blog'], ["Contact", '/contact']]
+
 
 export default function Header({ ids }: { ids: string }) {
-    const [language, setLanguage] = useState("en");
+    const { t } = useTranslation()
+
+    const [language, setLanguage] = useState<string>(i18n.language || 'en');
+
+    const handleChange = (event: SelectChangeEvent<string>) => {
+        const newLang = event.target.value;
+        setLanguage(newLang);         // update local state
+        i18n.changeLanguage(newLang); // change i18next language
+    };
+
     const scrollToSection = useScrollToSection();
 
     const [open, setOpen] = React.useState(false);
@@ -42,7 +53,8 @@ export default function Header({ ids }: { ids: string }) {
 
     const canBeOpen = open && Boolean(anchorEl);
     const id = canBeOpen ? 'transition-popper' : undefined;
-
+    const pages = [[t('header.navigation.1'), '/home', 'howwework'],  [t('header.navigation.4'), '/contact']]
+    // const pages = [[t('header.navigation.1'), '/home', 'howwework'], [t('header.navigation.2'), '/home', 'howwework'], [t('header.navigation.4'), '/contact']]
     return (
         <AppBar
             id={ids}
@@ -121,19 +133,19 @@ export default function Header({ ids }: { ids: string }) {
                                         />
                                         <Box
                                             sx={{
-                                                flex:1,
+                                                flex: 1,
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 alignItems: 'start',
                                                 p: 3,
                                                 borderRight: '1px solid rgba(0,0,0,0.1)',
                                                 '@media (max-width:600px)': {
-                                                    flex:0
+                                                    flex: 0
                                                 },
                                             }}
                                         >
-                                            {pages.map((item) => (
-                                                <NavLinkWithStars label={item[0]} href={item[1]} sectionId={item[2]} starshover={false} handleClick={handleClose}>
+                                            {pages.map((item,index) => (
+                                                <NavLinkWithStars key={index} label={item[0]} href={item[1]} sectionId={item[2]} starshover={false} handleClick={handleClose}>
                                                 </NavLinkWithStars>
                                             ))}
                                         </Box>
@@ -143,9 +155,8 @@ export default function Header({ ids }: { ids: string }) {
                                             <Box sx={{ alignItems: 'center', justifyContent: 'start', display: { xs: 'flex', sm: 'none' }, px: 1.5, py: 2 }}>
                                                 <LanguageIcon sx={{ pb: 0.4 }}></LanguageIcon>
                                                 <Select
-                                                    id={'languageChange'}
                                                     value={language}
-                                                    onChange={(e) => setLanguage(e.target.value)}
+                                                    onChange={handleChange}
                                                     variant="standard"
                                                     disableUnderline
                                                     size="small"
@@ -186,7 +197,7 @@ export default function Header({ ids }: { ids: string }) {
                                             </Box>
                                             <Box sx={{ px: 1, maxWidth: '400px' }}>
                                                 <ButtonPrimary>
-                                                    Book a free consultation
+                                                    {t('button.contact')}
                                                 </ButtonPrimary>
                                             </Box>
                                         </Box>
@@ -234,8 +245,8 @@ export default function Header({ ids }: { ids: string }) {
 
                 {/* Center: Nav links */}
                 <Stack direction="row" spacing={4} sx={{ alignItems: "center", position: 'absolute', left: '50%', transform: "translateX(-50%)", display: { xs: 'none', md: 'revert' } }}>
-                    {pages.map((item) => (
-                        <NavLinkWithStars label={item[0]} href={item[1]} sectionId={item[2]}>
+                    {pages.map((item,index) => (
+                        <NavLinkWithStars key={index} label={item[0]} href={item[1]} sectionId={item[2]}>
                         </NavLinkWithStars>
                     ))}
                 </Stack>
@@ -249,7 +260,7 @@ export default function Header({ ids }: { ids: string }) {
                     <LanguageIcon sx={{ pb: 0.4 }}></LanguageIcon>
                     <Select
                         value={language}
-                        onChange={(e) => setLanguage(e.target.value)}
+                        onChange={handleChange}
                         variant="standard"
                         disableUnderline
                         size="small"
@@ -269,15 +280,19 @@ export default function Header({ ids }: { ids: string }) {
                         MenuProps={{
                             PaperProps: {
                                 sx: {
-                                    mt: 1.5, // moves the menu down (increase for more space)
+                                    mt: 1.5,
                                     borderRadius: 2,
                                     boxShadow: "0px 4px 20px rgba(0,0,0,0.1)",
                                 },
                             },
                         }}
                     >
-                        <MenuItem value="si"><Typography sx={{ fontFamily: 'Inter Tight', fontSize: '16px', letterSpacing: 1 }}>SI</Typography></MenuItem>
-                        <MenuItem value="en"><Typography sx={{ fontFamily: 'Inter Tight', fontSize: '16px', letterSpacing: 1 }}>EN</Typography></MenuItem>
+                        <MenuItem value="si">
+                            <Typography sx={{ fontFamily: 'Inter Tight', fontSize: '16px', letterSpacing: 1 }}>SI</Typography>
+                        </MenuItem>
+                        <MenuItem value="en">
+                            <Typography sx={{ fontFamily: 'Inter Tight', fontSize: '16px', letterSpacing: 1 }}>EN</Typography>
+                        </MenuItem>
                     </Select>
                     <Box sx={(theme) => ({
                         [theme.breakpoints.down('lg')]: {
@@ -285,7 +300,7 @@ export default function Header({ ids }: { ids: string }) {
                         },
                     })}>
                         <ButtonPrimary endIcon={false}>
-                            Book a free consultation
+                            {t('button.contact')}
                         </ButtonPrimary>
                     </Box>
                 </Stack>

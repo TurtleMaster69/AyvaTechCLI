@@ -1,7 +1,10 @@
 // src/components/Footer.tsx
-import { Box, Divider, Link, Stack, Typography } from "@mui/material";
+import { Box, Divider,Stack, Typography } from "@mui/material";
+import { useTranslation } from 'react-i18next'
+import AyvaLogo from '../assets/svg/AyvaLogo.svg'
 
 export default function Footer() {
+  const {t}= useTranslation()
   return (
     <Box
       component="footer"
@@ -18,27 +21,33 @@ export default function Footer() {
         <Typography
           sx={{fontFamily:'Inter Tight', fontSize:{xs:'0.74rem',sm:'0.875rem'},letterSpacing:'0px',fontWeight:250,pr:2}}
         >
-          © {new Date().getFullYear()} AYVA Tech. All rights reserved.
+          © {new Date().getFullYear()} {t("footer.rights")}
         </Typography>
-        <Typography sx={{fontFamily:'Inter Tight', fontSize:{xs:'0.74rem',sm:'0.875rem'},letterSpacing:'0px',fontWeight:250}}>
+        <Typography component="div"  sx={{fontFamily:'Inter Tight', fontSize:{xs:'0.74rem',sm:'0.875rem'},letterSpacing:'0px',fontWeight:250}}>
         <Stack
           direction="row"
           justifyContent="center"
           alignItems="center"
           spacing={2}
         >
-          <Link href="/about" color="inherit" underline="hover">
-            Privacy Policy
-          </Link>
-          <Link href="/contact" color="inherit" underline="hover">
-            Cookie Notice
-          </Link>
-          <Link href="/privacy" color="inherit" underline="hover">
-            Authors
-          </Link>
-          <Link href="/privacy" color="inherit" underline="hover">
-            Terms and Conditions
-          </Link>
+        {/* <Link href="/about" color="inherit" underline="hover">
+          {t("footer.privacy")}
+        </Link>
+        <Link href="/contact" color="inherit" underline="hover">
+          {t("footer.cookie")}
+        </Link>
+        <Link href="/privacy" color="inherit" underline="hover">
+          {t("footer.author")}
+        </Link>
+        <Link href="/privacy" color="inherit" underline="hover">
+          {t("footer.terms")}
+        </Link> */}
+        <Box
+                        component="img"
+                        src={AyvaLogo}
+                        alt="Company Logo"
+                        sx={{ height: "auto", width: "auto" }}
+                    />
         </Stack>
         </Typography>
       </Box>

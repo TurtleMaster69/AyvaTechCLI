@@ -1,38 +1,41 @@
-import {Box, Button, useMediaQuery } from "@mui/material";
+import {Box, useMediaQuery } from "@mui/material";
 import Background from "../../backgrounds/main_background"
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+
 import { Stack, Typography } from "@mui/material";
 import Conveyer from "../../components/conveyer";
 import ButtonPrimary from "../../components/Buttons/buttonPrimary";
-import { appTheme } from "../ThemeProvider";
+import {appTheme}  from "../ThemeProvider";
+import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
+  const {t} = useTranslation();
   const theme = appTheme
-  const isXs = useMediaQuery(theme.breakpoints.down('sm')); // xs and below
-  const isLg = useMediaQuery(theme.breakpoints.up('sm')); // lg and up
+  // const isXs = useMediaQuery(theme.breakpoints.down('sm')); // xs and below
+  // const isLg = useMediaQuery(theme.breakpoints.up('sm')); // lg and up
   const isMd = useMediaQuery(theme.breakpoints.down('md'));
     const isMdup = useMediaQuery(theme.breakpoints.up('md'));
-  let text;
-  if (isXs) {
-    text = "Download 20 quick automations";
-  } else if (isLg) {
-    text = "Download 20 quick automations you can use this month.";
-  }
+
+  // let text;
+  const tpath = 'home.hero'
+  // if (isXs) {
+  //   text = t(`${tpath}.download.short`);
+  // } else if (isLg) {
+  //   text = t(`${tpath}.download.long`);
+  // }
 
   let text1
 
     if (isMd) {
-    text1 = "Organizations We've Trained";
+    text1 = t(`${tpath}.organization.short`);
   } else if (isMdup) {
-    text1 = "Organizations\nWe've Trained";
+    text1 = t(`${tpath}.organization.long`);
   }
 
   return (
     <Background>
 
       <Box sx={{display:'flex',flexDirection:'column',alignItems: "center",justifyContent:{xs:'start',sm:'center'},height:{xs:700,sm:800,md:850}}}>
-      <Button
+      {/* <Button
       component="a"
   href="https://ash-speed.hetzner.com/100MB.bin"
         sx={{
@@ -82,7 +85,7 @@ export function HeroSection() {
             }}
           />
         </Stack>
-      </Button>
+      </Button> */}
 
       <Stack spacing={7.5} alignItems="center" sx={{ overflow: "visible" }}>
         <Stack spacing={0} alignItems="center" sx={{ maxWidth: 1000, overflow: "visible" }}>
@@ -98,10 +101,11 @@ export function HeroSection() {
               textAlign: "center",
               pb: 4,
               mt: 6,
-              px:'1.5rem'
+              px:'1.5rem',
+              whiteSpace:'pre-line'
             }}
           >
-            Your business<br /> processes on autopilot.
+            {t('home.hero.title')}
           </Typography>
 
           <Typography
@@ -113,15 +117,14 @@ export function HeroSection() {
               fontSize: {xs:'1rem',sm:'1.2rem',md:"1.375rem"},
               textAlign: "center",
               lineHeight: "150%",
-              px:{xs:'1rem',sm:'2rem',md:0}
+              px:{xs:'1rem',sm:'2rem',md:0},
+              whiteSpace:'pre-wrap'
             }}
           >
-            Because we approach automation through business outcomes-not just technology.
-            <br />
-            Strategy. A skilled team. Intelligent solutions.
+            {t('home.hero.subtitle')}
           </Typography>
         </Stack>
-        <ButtonPrimary>Book a free consultation</ButtonPrimary>
+        <ButtonPrimary>{t('button.contact')}</ButtonPrimary>
       </Stack>
       </Box>
       <Box sx={{width:'85%',display:'flex',flexDirection:{xs:'column',md:'row'}, justifyContent:'space-between',pt: 2, alignItems: "center", borderTop: "2px solid rgba(255, 255, 255, 0.02)", }} >
@@ -134,7 +137,10 @@ export function HeroSection() {
             letterSpacing: 0,
             lineHeight: "25.2px",
             whiteSpace:'pre-line',
-            pb:'1rem'
+            pb:'1rem',
+            '@media(max-width:400px)':{
+                fontSize:'0.99rem'
+            }
           }}
         >
           {text1}

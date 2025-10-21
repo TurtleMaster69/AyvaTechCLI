@@ -9,8 +9,9 @@ import ClosingSection from '../Content/Home/ClosingSection';
 
 export default function HomePage() {
     const blogs = Blogs.items
-    const components = blogs.map((blog) => (
+    const components = blogs.map((blog,index) => (
                         <PostCard
+                        key={index}
                             blog={blog}
                         />
                 ))
