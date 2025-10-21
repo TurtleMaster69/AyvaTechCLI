@@ -149,7 +149,7 @@ export default function HowWeWorkSection() {
                                 title={item.title}
                                 content={item.content}
                                 type='external'
-                                value='https://justinjackson.ca/words.html'
+                                value={item.link}
                             />
                         </Box>
                     ))}
