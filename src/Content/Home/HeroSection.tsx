@@ -17,7 +17,7 @@ export function HeroSection() {
 
   // let text;
   const tpath = 'home.hero'
-  // if (isXs) {
+  // if (isXs) {s
   //   text = t(`${tpath}.download.short`);
   // } else if (isLg) {
   //   text = t(`${tpath}.download.long`);
