@@ -31,6 +31,9 @@ export function HeroSection() {
     text1 = t(`${tpath}.organization.long`);
   }
 
+  //TODO: remove mt from title after adding button
+ 
+
   return (
     <Background>
 
@@ -87,7 +90,9 @@ export function HeroSection() {
         </Stack>
       </Button> */}
 
-      <Stack spacing={7.5} alignItems="center" sx={{ overflow: "visible" }}>
+      
+
+      <Stack spacing={7.5} alignItems="center" sx={{ overflow: "visible" ,mt: {xs:'10rem',sm:0},}}>
         <Stack spacing={0} alignItems="center" sx={{ maxWidth: 1000, overflow: "visible" }}>
           <Typography
             variant="h1"
