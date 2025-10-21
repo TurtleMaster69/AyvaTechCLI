@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://https://turtlemaster69.github.io/AyvaTechCLI/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
