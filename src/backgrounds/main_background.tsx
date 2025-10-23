@@ -2,8 +2,8 @@
 import { type ReactNode } from "react";
 
 import { Box } from "@mui/material";
-import Tears from '../assets/png/background/tears.png'
-import Top from '../assets/png/background/top1.png'
+import Tears from '../assets/webp/background/tears.webp'
+import Top from '../assets/webp/background/top1.webp'
 
 
 interface BackgroundProps {
@@ -25,7 +25,9 @@ export function Main_background({ children }: BackgroundProps) {
       <Box
         component="img"
         src={Top}
-        alt="My PNG"
+        alt=""
+  role="presentation"
+  aria-hidden="true"
         sx={{
           top: '-50%',
           left: "50%",
@@ -36,9 +38,11 @@ export function Main_background({ children }: BackgroundProps) {
         }}
       />
       <Box
+      alt=""
+  role="presentation"
+  aria-hidden="true"
         component="img"
         src={Tears}
-        alt="My PNG"
         sx={{
           position: 'absolute',
           bottom: '-3%',

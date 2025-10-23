@@ -2,7 +2,7 @@
 import { type ReactNode } from "react";
 import {Box } from "@mui/material";
 
-import SShape from '../assets/png/background/star1.png';
+import SShape from '../assets/webp/background/star1.webp';
 interface BackgroundProps{
   children:ReactNode
   id:string
@@ -47,7 +47,9 @@ export function SecondBackground({children,id}:BackgroundProps){
     <Box
       component="img"
       src={SShape}
-      alt="My PNG"
+      alt=""
+  role="presentation"
+  aria-hidden="true"
       sx={{
           bottom: '60%',
           right: '-25%',

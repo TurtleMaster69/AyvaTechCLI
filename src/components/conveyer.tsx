@@ -104,7 +104,9 @@ export function Conveyer() {
       <ConveyorBeltWrapper>
         {doubledIcons.map((icon, index) => (
           <IconWrapper key={index}>
-              <img src={icon} width={'100%'}/>     
+              <img alt=""
+  role="presentation"
+  aria-hidden="true" src={icon} width={'100%'}/>     
           </IconWrapper>
         ))}
       </ConveyorBeltWrapper>

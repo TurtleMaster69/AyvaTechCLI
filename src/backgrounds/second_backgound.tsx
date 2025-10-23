@@ -2,9 +2,9 @@
 import { type ReactNode } from "react";
 import {Box } from "@mui/material";
 
-import SShape from '../assets/png/background/star1.png';
-import S1Shape from '../assets/png/background/star2.png';
-import LShape from "../assets/png/background/shape_left.png";
+import SShape from '../assets/webp/background/star1.webp';
+import S1Shape from '../assets/webp/background/star2.webp';
+import LShape from "../assets/webp/background/shape_left.webp";
 interface BackgroundProps{
   children:ReactNode
 }
@@ -24,7 +24,9 @@ export function SecondBackground({children}:BackgroundProps){
     <Box
       component="img"
       src={SShape}
-      alt="My PNG"
+      alt=""
+  role="presentation"
+  aria-hidden="true"
       sx={{
           bottom: '55%',
           left: "90%",
@@ -45,7 +47,9 @@ export function SecondBackground({children}:BackgroundProps){
     /><Box
       component="img"
       src={S1Shape}
-      alt="My PNG"
+      alt=""
+  role="presentation"
+  aria-hidden="true"
       sx={{
           bottom: '25%',
           left: "20%",
@@ -68,7 +72,9 @@ export function SecondBackground({children}:BackgroundProps){
           <Box
         component="img"
         src={LShape}
-        alt="My PNG"
+        alt=""
+  role="presentation"
+  aria-hidden="true"
         sx={{
           opacity:0,
           bottom: '50%',
@@ -81,14 +87,14 @@ export function SecondBackground({children}:BackgroundProps){
             left:"50%",
             width:'200%',
             height:'70%',
-            transform: 'translateX(-50%) translateY(50%) rotate(20deg)',
+            transform: 'translateX(-50%) translateY(50%) rotate(-50deg) scaleX(1)',
             opacity:1,
           },
           '@media (max-width:600px)': {
             left:"50%",
             width:'500%',
             height:'70%',
-            transform: 'translateX(-50%) translateY(50%) rotate(30deg)',
+            transform: 'translateX(-50%) translateY(50%) rotate(-40deg) scaleX(1)',
             opacity:1,
           },
         }}

@@ -1,23 +1,54 @@
+import { lazy} from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "../Content/Layout";
-import Home from "../Pages/Home";
-import ContactUs from "../Pages/ContactUs";
-import Blog from "../Pages/Blog";
-import BlogPage from "../Pages/BlogPage";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      // Redirect `/` → `/home`
-      { index: true, element: <Navigate to="/home" replace /> },
+const Home = lazy(() => import("../Pages/Home"));
+const ContactUs = lazy(() => import("../Pages/ContactUs"));
+const Blog = lazy(() => import("../Pages/Blog"));
+const BlogPage = lazy(() => import("../Pages/BlogPage"));
 
-      // Actual routes
-      { path: "home", element: <Home /> },
-      { path: "contact", element: <ContactUs /> },
-      { path: "blog", element: <Blog /> },
-      { path:"blog/:id", element:<BlogPage />}
-    ],
-  },
-], { basename: "/" });
+// 🔹 Router definition
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { index: true, element: <Navigate to="/home" replace /> },
+        {
+          path: "home",
+          element: (
+
+              <Home />
+
+          ),
+        },
+        {
+          path: "contact",
+          element: (
+
+              <ContactUs />
+
+          ),
+        },
+        {
+          path: "blog",
+          element: (
+
+              <Blog />
+
+          ),
+        },
+        {
+          path: "blog/:id",
+          element: (
+
+              <BlogPage />
+
+          ),
+        },
+      ],
+    },
+  ],
+  { basename: "/" }
+);

@@ -10,6 +10,7 @@ import AyvaLogo from '../../assets/svg/AyvaLogo.svg'
 import { useScrollToSection } from '../../components/Utils/useScrollToSection';
 import { useScrollToContactSection } from '../../components/Utils/useScrollToContactSection';
 import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from "react-router-dom";
 
 export default function ClosingSection() {
   const {t} = useTranslation();
@@ -91,7 +92,7 @@ export default function ClosingSection() {
               {t('home.closing.navigation.title')}
             </Typography>
             <Typography sx={{ pt: 2, pb: 3, fontFamily: 'Inter Tight', fontSize: '14px', letterSpacing: '0px', lineHeight: '2.2', fontWeight: 300 }}>
-              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'howwework')} color="inherit" underline="hover">
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'howwework')} component={RouterLink} to='/home' color="inherit" underline="hover">
                 {t('home.closing.navigation.about-us')}
               </Link> <br></br>
               {/* <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'howwework')} color="inherit" underline="hover">
@@ -100,7 +101,7 @@ export default function ClosingSection() {
               <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/blog','blogHeader')} color="inherit" underline="hover">
                 {t('home.closing.navigation.blog')}
               </Link><br></br> */}
-              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} color="inherit" underline="hover">
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} component={RouterLink} to='/contact' color="inherit" underline="hover">
                 {t('home.closing.navigation.contact')}
               </Link>
             </Typography>
@@ -147,7 +148,7 @@ export default function ClosingSection() {
             mt:3,
             lineHeight:'200%'
           }}>
-            <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} color="inherit" underline="hover">
+            <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} component={RouterLink} to='/contact' color="inherit" underline="hover">
               {t('home.closing.potential.consultation')}
               <ArrowForwardIcon fontSize="small" sx={{ml:1}} />
             </Link>

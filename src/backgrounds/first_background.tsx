@@ -1,7 +1,7 @@
 
 import { type ReactNode } from "react";
 import { Box } from "@mui/material";
-import LShape from "../assets/png/background/shape_left.png";
+import LShape from "../assets/webp/background/shape_left.webp";
 
 interface BackgroundProps {
   children: ReactNode
@@ -23,7 +23,9 @@ export function First_background({ children }: BackgroundProps) {
       <Box
         component="img"
         src={LShape}
-        alt="My PNG"
+        alt=""
+  role="presentation"
+  aria-hidden="true"
         sx={{
           bottom: '50%',
           left: "20%",

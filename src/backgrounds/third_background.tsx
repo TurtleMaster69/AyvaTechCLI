@@ -1,42 +1,52 @@
 
 import { type ReactNode } from "react";
+import { Box } from "@mui/material";
+import LShape from "../assets/webp/background/shape_left.webp";
 
-import {Box } from "@mui/material";
-import LShape from "../assets/png/rShape.png";
-
-interface BackgroundProps{
-  children:ReactNode
-  id:string
+interface BackgroundProps {
+  children: ReactNode
 }
 
-export function Third_background({children,id}:BackgroundProps){
+export function First_background({ children }: BackgroundProps) {
   return (
-  <Box
-    id={id}
+    <Box
       sx={{
-        width:'100%',
-        Height:'auto',
+        width: '100%',
+        Height: 'auto',
         position: "relative",
         alignItems: "center",
-        display:'flex',
-        justifyContent:'center',
-        overflowX:'clip'
+        display: 'flex',
+        justifyContent: 'center',
+        overflowX: 'clip'
       }}
-  >
-
+    >
       <Box
-      component="img"
-      src={LShape}
-      alt="My PNG"
-      sx={{
-        top:30,
-        right:0,
-        width:1025,
-        height: "auto",
-        borderRadius: 2,
-        position: 'absolute'
-      }}
-    />
+        component="img"
+        src={LShape}
+        alt=""
+  role="presentation"
+  aria-hidden="true"
+        sx={{
+          bottom: '50%',
+          right: "20%",
+          transform: 'translateX(50%) translateY(50%) scaleX(-1)',
+          width: "100%",
+          maxHeight: 1100,
+          position: 'absolute',
+          '@media (max-width:1000px)': {
+            left:"50%",
+            width:'200%',
+            height:'70%',
+            transform: 'translateX(-50%) translateY(50%) rotate(-20deg) scaleX(-1)',
+          },
+          '@media (max-width:600px)': {
+            left:"50%",
+            width:'500%',
+            height:'40%',
+            transform: 'translateX(-50%) translateY(50%) rotate(-50deg) scaleX(-1)',
+          },
+        }}
+      />
 
       <Box
         sx={{
@@ -53,8 +63,8 @@ export function Third_background({children,id}:BackgroundProps){
       >
         {children}
       </Box>
-  </Box>
+    </Box>
   );
 };
 
-export default Third_background;
+export default First_background;

@@ -78,7 +78,7 @@ const items = [
 
 export default function WhySection() {
     return (
-        <Background id={'why-us-section'}>
+        <Background>
             <Typography 
             variant='h2'
             sx={{

@@ -16,7 +16,7 @@ export default function TitleSection({id}:{id:string}) {
 
   return (
     <Box 
-    sx={{width:1440,height:514,
+    sx={{width:'100%',maxWidth:1440,height:"100%",
                   position: "relative",
           zIndex: 1,
           display: "flex",
@@ -55,7 +55,7 @@ export default function TitleSection({id}:{id:string}) {
         zIndex: -1,
         }}
     />
-    <Box sx={{display:'flex',alignItems:'end',height:'100%',width:'100%',px:15}}>
+    <Box sx={{display:'flex',alignItems:'end',height:'100%',width:'100%',px:15,pt:30}}>
         <Box sx={{display:'flex',justifyContent:'space-between',flexDirection:'row',width:'100%',alignItems:'end'}}>
             <Typography variant="h2" sx={{textAlign: 'left',WebkitBackgroundClip: "text",
                         backgroundClip: "text",

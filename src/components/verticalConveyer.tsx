@@ -101,7 +101,9 @@ export default function VerticalConveyor({ allImages }: images) {
       <ConveyorBeltWrapper>
         {images1.map((icon,index) => (
           <IconWrapper key={index}>
-              <StyledImage src={icon} alt="icon" />
+              <StyledImage alt=""
+  role="presentation"
+  aria-hidden="true" src={icon}/>
           </IconWrapper>
         ))}
       </ConveyorBeltWrapper>
@@ -110,7 +112,9 @@ export default function VerticalConveyor({ allImages }: images) {
       <ConveyorBeltWrapper1>
         {images2.map((icon,index) => (
           <IconWrapper key={index}>
-              <StyledImage src={icon} alt="icon" />
+              <StyledImage alt=""
+  role="presentation"
+  aria-hidden="true" src={icon}/>
           </IconWrapper>
         ))}
       </ConveyorBeltWrapper1>

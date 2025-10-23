@@ -2,6 +2,7 @@ import { Box, Link, Typography } from "@mui/material";
 import { keyframes } from "@mui/system";
 import LoadingStar from '../SVG/star_shape'
 import { useScrollToSection } from "../Utils/useScrollToSection";
+import { Link as RouterLink } from "react-router-dom";
 
 const spin = keyframes`
   0% { transform: rotate(-45deg); }
@@ -85,7 +86,7 @@ export default function NavLinkWithStars({ label, href,sectionId=undefined,stars
           transition: "color 0.3s",
         }}
       >
-        <Link color={'white'} underline="none"
+        <Link color={'white'} underline="none" to={href} component={RouterLink}
         onClick={() => scrollToSection(href, sectionId)}
         sx={{ cursor: "pointer" }}
   >
