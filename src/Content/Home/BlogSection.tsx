@@ -2,15 +2,16 @@ import { Box, Typography } from '@mui/material'
 import ButtonPrimary from '../../components/Buttons/buttonPrimary'
 import BlogBox from '../../components/Boxes/BlogBox'
 import Blog from '../../assets/blogs/blogs.json'
+import { useTranslation } from 'react-i18next'
 
 export default function BlogSection() {
 
+    const {t} = useTranslation();
     const blog = Blog.items
     if(!blog)return
     const latestThree = blog
     .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
     .slice(0, 5);
-
     return (
         <Box sx={{ width: '100%', maxWidth: 1440, height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Box sx={{ width: '85%', py: {xs:8,sm:10} }}>
@@ -26,13 +27,13 @@ export default function BlogSection() {
                             backgroundRepeat: "no-repeat",
                             WebkitTextFillColor: 'transparent',
                             pb: 7,
-                            pr:3
+                            pr:1.5
                         }}>
-                        Blog & News
+                        {t('home.blog.title')}
                     </Typography>
                     <Box>
-                        <ButtonPrimary>
-                            View All
+                        <ButtonPrimary path='/blog'>
+                            {t('button.view-all')}
                         </ButtonPrimary>
                     </Box>
                 </Box>
@@ -57,8 +58,8 @@ export default function BlogSection() {
                     },
                     }}
                 >
-                    {latestThree.map((blog) => (
-                        <BlogBox blog={blog}></BlogBox>
+                    {latestThree.map((blog,index) => (
+                        <BlogBox key={index} blog={blog}></BlogBox>
                     ))}
                 </Box>
                 </Box>

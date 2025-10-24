@@ -1,0 +1,144 @@
+{
+    "home": {
+        "hero": {
+            "title": "Vaši poslovni\nprocesi na avtopilotu.",
+            "subtitle": "Ker na umetno inteligenco gledamo skozi poslovni rezultat, ne le skozi tehnologijo.\nStrategija, usposobljena ekipa, inteligentne re\u0161itve.",
+            "download": {
+                "short": "20 hitrih avtomatizacij",
+                "long": "20 hitrih avtomatizacij, ki jih lahko uvedete že ta mesec."
+            },
+            "organization": {
+                "short": "Podjetja in ekipe, ki so nam \u017ee zaupala.",
+                "long": "Podjetja in ekipe,\n ki so nam \u017ee zaupala."
+            }
+        },
+        "blog": {
+            "title": "Blog in Novice"
+        },
+        "closing": {
+            "title": "Prepustite rutino sistemu. Ekipa naj dela tisto, kar šteje. Rezervirajte brezplačni posvet tukaj",
+            "navigation": {
+                "title": "Hitri dostop",
+                "about-us": "O nas",
+                "why-us": "Zakaj mi",
+                "blog": "Blog",
+                "contact": "Kontakt"
+            },
+            "potential": {
+                "title": "Ste pripravljeni odkriti\npolni potencial svojega podjetja?",
+                "consultation": "Rezervirajte posvet",
+                "download": "Prenesite vodnik"
+            }
+        },
+        "how": {
+            "link": {
+                "1": {
+                    "title": "10-40%",
+                    "content": "Dvig produktivnost pri rutinskih nalogah"
+                },
+                "2": {
+                    "title": "1.36€ prihranka",
+                    "content": "Za vsak 1€ vlozen v 3 letih"
+                },
+                "3": {
+                    "title": "Do 2x",
+                    "content": "Hitrej\u0161a izvedba projektov"
+                },
+                "4": {
+                    "title": "95%",
+                    "content": "Uvedb AI brez merljivega P&L učinka"
+                },
+                "5": {
+                    "title": "Le 36%",
+                    "content": "Zaposlenih se po\u010duti ustrezno usposobljenih za uporabo AI orodij pri delu."
+                }
+            },
+            "title": "Proces Našega Dela",
+            "expandable": {
+                "1": {
+                    "title": "01 \tOd pogovora do vpogleda",
+                    "description": "Va\u0161e izzive raz\u010dlenimo in odkrijemo, kje izgubljate najve\u010d \u010dasa. Rezultat? Jasna slika, kje lahko avtomatizacije res naredijo razliko."
+                },
+                "2": {
+                    "title": "02\tOd ideje do načrta",
+                    "description": "Na podlagi analize pripravimo konkretni na\u010drt: kaj se avtomatizira, kako poteka proces in kak\u0161en rezultat pri\u010dakovati."
+                },
+                "3": {
+                    "title": "03\tOd znanja do prakse",
+                    "description": "Usposobimo ekipo: delavnice na va\u0161ih primerih, navodila in varnostne smernice. Cilj je redna in varna uporaba implementiranih re\u0161itev."
+                },
+                "4": {
+                    "title": "04\tOd prototipa do delovanja",
+                    "description": "Postavimo MVP avtomatizacije, jo preizkusimo na va\u0161em primeru in jo tekom procsa prilagajamo."
+                },
+                "5": {
+                    "title": "05\tOd uvedbe do podpore",
+                    "description": "Spremljamo rezultate, skrbimo za stabilnost in posodobitve. Partnerstvo se ne kon\u010da z implementacijo \u2013 tam se za\u010dne."
+                }
+            }
+        },
+        "picture": {
+            "subtitle": "ur izobraževanj na\n področju umetne inteligence."
+        },
+        "where": {
+            "title": "Kje Vam Lahko Pomagamo",
+            "cards": {
+                "1": {
+                    "title": "AI izobraževanja in delavnice po meri",
+                    "content": "Prilagodimo program va\u0161im ciljem in procesom: od uvodnih predavanj do hands-on delavnic na va\u0161ih primerih. Ekipe osvojijo uporabna orodja, varno rabo in jasne procese, ki jih lahko uvedejo \u017ee naslednji dan."
+                },
+                "2": {
+                    "title": "Avtomatizacija rutinskih opravil",
+                    "content": "Avtomatiziramo poro\u010dila, prenose podatkov, koledarje in opomnike, da rutine te\u010dejo same. Zmanj\u0161amo napake, skraj\u0161amo ro\u010dne klike in sprostimo \u010das ekipe za delo z ve\u010djo dodano vrednostjo."
+                },
+                "3": {
+                    "title": "Prodajni procesi z AI podporo",
+                    "content": "Vzpostavimo tok od leada do naro\u010dila: kvalifikacija, ponudbe, CRM integracije in samodejni follow-upi. Prodajniki dobijo pravo\u010dasne opomnike in predloge naslednjih korakov, vi pa vi\u0161jo konverzijo brez dodatnega ro\u010dnega dela."
+                },
+                "4": {
+                    "title": "Marketing z umetno inteligenco",
+                    "content": "Pospe\u0161imo pripravo vsebin in kampanj: generiranje osnutkov, koledar objav, poro\u010dila in segmentacija. AI pomaga z izborom tem in timingom, vi pa dobite konsistentne kampanje in jasne, merljive rezultate."
+                },
+                "5": {
+                    "title": "Podpora strankam z AI asistentom",
+                    "content": "Implementiramo chatbote in baze znanja za takoj\u0161nje odgovore na pogosta vpra\u0161anja. Podpora se razbremeni rutine, hitrost odziva zraste, zahtevni primeri pa dobijo ve\u010d pozornosti."
+                },
+                "6": {
+                    "title": "Razvoj in integracije AI po meri",
+                    "content": "AI pove\u017eemo z va\u0161imi sistemi in podatki: od analitike in priporo\u010dil do procesne avtomatizacije. Re\u0161itve gradimo modularno in varno, da se prilagodijo va\u0161im zahtevam in rastejo z vami."
+                }
+            }
+        }
+    },
+    "contact": {
+        "title": "Kontaktiraj Nas",
+        "subtitle": "Pogovorimo se. Ne glede na to, ali vas zanima, kaj lahko umetna inteligenca stori za vaše podjetje, ali pa že imate kaj v mislih – z veseljem vas bomo poslušali.",
+        "form": {
+            "title": "Kako vam lahko pomagamo?",
+            "subtitle": "POGOVORIMO SE",
+            "name-field": "ime",
+            "email-field": "e-naslov",
+            "message-field": "sporočilo"
+        }
+    },
+    "footer": {
+        "rights": "AYVA Tech. Vse pravice pridržane.",
+        "privacy": "Pravilnik zasebnosti",
+        "cookie": "Pi\u0161kotki",
+        "author": "Avtorji",
+        "terms": "Pogoji uporabe"
+    },
+    "header": {
+        "navigation": {
+            "1": "O Nas",
+            "2": "Zakaj mi",
+            "3": "Blog",
+            "4": "Kontakt"
+        }
+    },
+    "button": {
+        "contact": "Rezerviraj posvet",
+        "view-all": "Poglej vse",
+        "submit": "Po\u0161lji sporočilo"
+    }
+}

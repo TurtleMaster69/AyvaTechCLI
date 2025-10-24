@@ -1,11 +1,11 @@
+import { useEffect, lazy} from "react";
 import { Stack } from "@mui/material";
 import { HeroSection } from "../Content/Home/HeroSection";
-import { WhereWeCanHelpSection } from "../Content/Home/WhereWeCanHelpSection";
-import HowWeWorkSection from "../Content/Home/HowWeWorkSection";
-import PictureSection from "../Content/Home/PictureSection";
-import ClosingSection from "../Content/Home/ClosingSection";
-import BlogSection from "../Content/Home/BlogSection";
-import { useEffect } from "react";
+
+const WhereWeCanHelpSection = lazy(()=> import("../Content/Home/WhereWeCanHelpSection"))  
+const HowWeWorkSection = lazy(()=> import("../Content/Home/HowWeWorkSection")) 
+const PictureSection = lazy(()=> import("../Content/Home/PictureSection")) 
+const ClosingSection = lazy(()=> import("../Content/Home/ClosingSection")) 
 
 export function ContactUs() {
         useEffect(() => {
@@ -36,7 +36,7 @@ export function ContactUs() {
         <WhereWeCanHelpSection/>
         <HowWeWorkSection/>
         <PictureSection></PictureSection>
-        <BlogSection></BlogSection>
+        {/* <BlogSection></BlogSection> */}
         <ClosingSection></ClosingSection>
       </Stack>
   );

@@ -45,7 +45,7 @@ const ConveyorBeltWrapper = styled(Box)(() => ({
   height:'100%',
   flexDirection:'column',
   gap:'1%',
-  animation: `${scrollLoop} 4s linear infinite`,
+  animation: `${scrollLoop} 10s linear infinite`,
 
 }));
 const ConveyorBeltWrapper1 = styled(Box)(() => ({
@@ -54,7 +54,7 @@ const ConveyorBeltWrapper1 = styled(Box)(() => ({
   height:'100%',
   flexDirection:'column',
   gap:'1%',
-  animation: `${scrollLoop1} 4s linear infinite`,
+  animation: `${scrollLoop1} 10s linear infinite`,
 
 
 }));
@@ -99,18 +99,22 @@ export default function VerticalConveyor({ allImages }: images) {
     >
           <ConveyorContainer >
       <ConveyorBeltWrapper>
-        {images1.map((icon) => (
-          <IconWrapper>
-              <StyledImage src={icon} alt="icon" />
+        {images1.map((icon,index) => (
+          <IconWrapper key={index}>
+              <StyledImage alt=""
+  role="presentation"
+  aria-hidden="true" src={icon}/>
           </IconWrapper>
         ))}
       </ConveyorBeltWrapper>
     </ConveyorContainer>
           <ConveyorContainer1 >
       <ConveyorBeltWrapper1>
-        {images2.map((icon) => (
-          <IconWrapper>
-              <StyledImage src={icon} alt="icon" />
+        {images2.map((icon,index) => (
+          <IconWrapper key={index}>
+              <StyledImage alt=""
+  role="presentation"
+  aria-hidden="true" src={icon}/>
           </IconWrapper>
         ))}
       </ConveyorBeltWrapper1>

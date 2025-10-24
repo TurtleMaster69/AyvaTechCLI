@@ -7,6 +7,7 @@ import BorderButton from "../../components/Buttons/borderButton";
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import { useTranslation } from "react-i18next";
 
 
 
@@ -14,6 +15,7 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 
 
 export function HeroSection() {
+  const {t}=useTranslation()
   return (
     <Background id={'contact-sectionw'}>
       <Box sx={{display:"flex",flexDirection:'column',pt:22,pb:{xs:5,sm:'10',md:22},width:'85%'} } >
@@ -22,16 +24,16 @@ export function HeroSection() {
                         backgroundImage: "linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(0, 17, 255, 1) 120%)",
                         backgroundRepeat: "no-repeat",
                         WebkitTextFillColor: 'transparent',pb:'16px'}}>
-          Contact Us
+          {t('contact.title')}
         </Typography>
         <Typography sx={{fontFamily:'Delight',fontSize:'24px',maxWidth:600}}>
-          Let’s talk. Whether you’re curious about what AI can do for your business or you already have something in mind, we’d love to hear from you.
+          {t('contact.subtitle')}
         </Typography>
       </Box>
       <Box
       sx={{width:'85%',height:'100%',display:'flex',flexDirection:{xs:'column',md:'row'}, gap:{xs:5,md:0}}}>
         <Box sx={{width:'100%',gap:2,display:'flex',flexDirection:'column'}}>
-          <Typography  sx={{
+          <Typography component="div" sx={{
             fontFamily:'Delight',
             fontSize:'18',
             textAlign: 'left',WebkitBackgroundClip: "text",
@@ -39,7 +41,7 @@ export function HeroSection() {
                         backgroundImage: "linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(0, 17, 255, 1) 120%)",
                         backgroundRepeat: "no-repeat",
                         WebkitTextFillColor: 'transparent'}}>
-          <Box display={'flex'} gap={1}><StartSVG width={10}/> LETS TALK</Box>
+          <Box display={'flex'} gap={1}><StartSVG width={10}/> {t('contact.form.subtitle')}</Box>
         </Typography>
         <Box sx={{display:'inline-flex'}}>
             <Typography variant="h2" sx={{textAlign: 'left',              WebkitBackgroundClip: "text",
@@ -50,8 +52,8 @@ export function HeroSection() {
               WebkitTextFillColor: 'transparent',
                         pb:'40px',
                         fontSize:56,
-                        lineHeight:'120%'}}>
-          What can we<br></br> help you with?
+                        lineHeight:'120%',whiteSpace:'pre-line'}}>
+          {t('contact.form.title')}
         </Typography>
         </Box>
             <BorderButton width={'184px'} height={'56px'} endIcon={false} type="email" value="info@ayva.si">

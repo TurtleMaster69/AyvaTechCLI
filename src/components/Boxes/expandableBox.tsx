@@ -30,7 +30,9 @@ export default function ExpandableBox({ title, children,autoExpanded=false}: Exp
     >
       {/* Title row */}
       <Box sx={{ display: "flex", width:'100%',justifyContent: "space-between", alignItems: "center" }}>
-        <Typography sx={{ fontFamily: "'Delight', Helvetica",letterSpacing:'0%',fontSize: "20px", lineHeight:'120%',whiteSpace: {xs:'break-spaces',md:'pre'}}}>{title}</Typography>
+        <Typography sx={{ fontFamily: "'Delight', Helvetica",letterSpacing:'0%',fontSize: {xs:'1.118rem',sm:"1.25rem"}, lineHeight:'120%',whiteSpace: {xs:'break-spaces',md:'pre'},tabSize:{xs:1,sm:5,md:6}}}>
+          {title}
+          </Typography>
         <IconButton onClick={toggleExpand} size="small" >
           {expanded ? <RemoveIcon sx={{ color: "#fff" }}/> : <AddIcon sx={{ color: "#fff" }}/>}
         </IconButton>
@@ -39,7 +41,7 @@ export default function ExpandableBox({ title, children,autoExpanded=false}: Exp
       {/* Expandable content */}
       <Collapse in={expanded}>
         <Box sx={{ mt: 2 }}>
-          <Typography sx={{fontFamily:'Inter Tight', fontSize:'16px', lineHeight:'150%', letterSpacing:'0%'}}>
+          <Typography sx={{fontFamily:'Inter Tight', fontSize:'16px', lineHeight:'150%', letterSpacing:'0%',mr:3}}>
           {children}
           </Typography>
         </Box>

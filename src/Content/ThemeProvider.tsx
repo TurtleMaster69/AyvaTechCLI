@@ -67,15 +67,15 @@ export const appTheme = createTheme({
       letterSpacing: "0%",
       '@media (max-width:1000px)': {
         fontSize: '3.5rem',
-        lineHeight: "85%",
+        lineHeight: '120%',
       },
       '@media (max-width:600px)': {
         fontSize: '3rem',
-        lineHeight: "85%",
+        lineHeight: '120%',
       },
       '@media (max-width:450px)': {
         fontSize: '2.7rem',
-        lineHeight: "85%",
+        lineHeight: '120%',
       },
     },
     h3: {

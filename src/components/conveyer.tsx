@@ -52,14 +52,14 @@ const ConveyorBeltWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   opacity: 0.6,
   width: "100%",
-  animation: `${scrollLoop} 15s linear infinite`,
+  animation: `${scrollLoop} 20s linear infinite`,
 
   [theme.breakpoints.between('sm',"md")]: {
-    animation: `${scrollLoopMobile} 15s linear infinite`,
+    animation: `${scrollLoopMobile} 20s linear infinite`,
   },
 
   [theme.breakpoints.down("sm")]: {
-    animation: `${scrollLoop600} 15s linear infinite`,
+    animation: `${scrollLoop600} 20s linear infinite`,
   },
 }));
 
@@ -98,14 +98,15 @@ export function Conveyer() {
   Icon15,
   Icon16,
 ];
-  console.log(icons[0])
   const doubledIcons = [...icons, ...icons, ...icons, ...icons, ...icons, ...icons, ...icons, ...icons, ...icons, ...icons];
   return (
     <ConveyorContainer >
       <ConveyorBeltWrapper>
         {doubledIcons.map((icon, index) => (
           <IconWrapper key={index}>
-              <img src={icon} width={'100%'}/>     
+              <img alt=""
+  role="presentation"
+  aria-hidden="true" src={icon} width={'100%'}/>     
           </IconWrapper>
         ))}
       </ConveyorBeltWrapper>

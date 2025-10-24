@@ -7,8 +7,8 @@ interface BoxCardProps {
   height?: number | string;
   children?: React.ReactNode;
   justifyContent?: string;
-  pb?: number | string;
-  pt?: number | string;
+  pb?: number | string | { xs: number| string; sm: number| string; md: number| string };
+  pt?: number | string | { xs: number| string; sm: number| string; md: number| string};
   endIcon?: boolean;
   type?: "email" | "phone" | "external"; // type of action
   value?: string; // the email, phone number, or URL
@@ -54,8 +54,8 @@ export default function BoxCard({
         height,
         pl: 3,
         pr: 3,
-        pt,
-        pb,
+        pt:pt,
+        pb:pb,
         background: "linear-gradient(to bottom left, rgba(255,255,255,0.05), rgba(255,255,255,0))",
         borderRadius: 3,
         outline: "2px solid rgba(255,255,255,0.05)",

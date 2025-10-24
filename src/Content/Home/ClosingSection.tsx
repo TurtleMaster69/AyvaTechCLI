@@ -9,14 +9,17 @@ import Footer from '../Footer';
 import AyvaLogo from '../../assets/svg/AyvaLogo.svg'
 import { useScrollToSection } from '../../components/Utils/useScrollToSection';
 import { useScrollToContactSection } from '../../components/Utils/useScrollToContactSection';
+import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from "react-router-dom";
 
 export default function ClosingSection() {
+  const {t} = useTranslation();
     const scrollToSection = useScrollToSection();
     const scrollToSectionContact = useScrollToContactSection();
   return (
     <Main_background>
-      <Stack spacing={7.5} alignItems="center" sx={{ overflow: "visible" }}>
-        <Stack spacing={0} alignItems="center" sx={{ maxWidth: 954, overflow: "visible" }}>
+      <Stack spacing={7.5} alignItems="center" sx={{display:'flex', width:'100%', overflow: "visible" }}>
+        <Stack spacing={0} alignItems="center" sx={{width:'85%', maxWidth: 954, overflow: "visible" }}>
           <Typography
             variant='h2'
             sx={{
@@ -29,13 +32,15 @@ export default function ClosingSection() {
               textAlign: "center",
               overflow: "visible",
               lineHeight: '140%',
-              mt: {xs:20,sm:32}
+              mt: {xs:20,sm:32},
+              whiteSpace:'pre-wrap',
+              pb:1
             }}
           >
-            Let the system handle the <br></br> routine and your team focus <br></br> on what matters.
+            {t('home.closing.title')}
           </Typography>
         </Stack>
-        <ButtonPrimary>Book a free consultation</ButtonPrimary>
+        <ButtonPrimary>{t('button.contact')}</ButtonPrimary>
       </Stack>
 
       <Box sx={{
@@ -71,33 +76,33 @@ export default function ClosingSection() {
             <Box sx={{
               display: 'flex', flexDirection: 'row', gap: 2
             }}>
-              <Link href="/about" color="inherit" underline="hover">
+              <Link href="https://www.linkedin.com/company/ayva-tech" color="inherit" underline="hover">
                 <LinkedInIcon />
               </Link>
-              <Link href="/about" color="inherit" underline="hover">
+              <Link href="https://www.instagram.com/ai_talks_slo/" color="inherit" underline="hover">
                 <InstagramIcon />
               </Link>
-              <Link href="/about" color="inherit" underline="hover">
+              <Link href="" color="inherit" underline="hover">
                 <FacebookIcon />
               </Link>
             </Box>
           </Box>
           <Box sx={{ }}>
             <Typography sx={{ fontFamily: 'Inter Tight', fontSize: '16px', fontWeight: 500, mt: 1 }}>
-              Quick Navigation
+              {t('home.closing.navigation.title')}
             </Typography>
             <Typography sx={{ pt: 2, pb: 3, fontFamily: 'Inter Tight', fontSize: '14px', letterSpacing: '0px', lineHeight: '2.2', fontWeight: 300 }}>
-              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'why-us-section')} color="inherit" underline="hover">
-                About us
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'howwework')} component={RouterLink} to='/home' color="inherit" underline="hover">
+                {t('home.closing.navigation.about-us')}
               </Link> <br></br>
-              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'why-us-section')} color="inherit" underline="hover">
-                Why us
+              {/* <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/home', 'howwework')} color="inherit" underline="hover">
+                {t('home.closing.navigation.why-us')}
               </Link> <br></br>
               <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSection('/blog','blogHeader')} color="inherit" underline="hover">
-                Blog
-              </Link><br></br>
-              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} color="inherit" underline="hover">
-                Contact
+                {t('home.closing.navigation.blog')}
+              </Link><br></br> */}
+              <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} component={RouterLink} to='/contact' color="inherit" underline="hover">
+                {t('home.closing.navigation.contact')}
               </Link>
             </Typography>
           </Box>
@@ -134,7 +139,7 @@ export default function ClosingSection() {
             backgroundRepeat: "no-repeat",
             WebkitTextFillColor: 'transparent',
           }}>
-            Ready to Unleash your <br></br>Company's Full Potential?
+            {t('home.closing.potential.title')}
           </Typography>
           <Typography sx={{
             fontFamily: 'Inter Tight',
@@ -143,15 +148,15 @@ export default function ClosingSection() {
             mt:3,
             lineHeight:'200%'
           }}>
-            <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} color="inherit" underline="hover">
-              Book a consultation
+            <Link sx={{ cursor: "pointer" }} onClick={() => scrollToSectionContact()} component={RouterLink} to='/contact' color="inherit" underline="hover">
+              {t('home.closing.potential.consultation')}
               <ArrowForwardIcon fontSize="small" sx={{ml:1}} />
             </Link>
             <br></br>
-            <Link href="https://ash-speed.hetzner.com/100MB.bin" color="inherit" underline="hover">
-              Download the guide
+            {/* <Link href="https://ash-speed.hetzner.com/100MB.bin" color="inherit" underline="hover">
+              {t('home.closing.potential.download')}
               <ArrowForwardIcon fontSize="small" sx={{ml:1}} />
-            </Link>
+            </Link> */}
           </Typography>
         </Box>
 
