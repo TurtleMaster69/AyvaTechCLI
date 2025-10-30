@@ -1,6 +1,7 @@
 import { Link } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import type { ReactNode } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 interface LinkProps{
     children?: ReactNode
@@ -10,7 +11,7 @@ interface LinkProps{
 
 export default function ArrowForwardLink({children,color= 'inherit',ref='/about'}:LinkProps) {
     return (
-        <Link href={ref} color={color} underline="hover" 
+        <Link to={ref} component={RouterLink} color={color} underline="hover" 
         sx={{
             display: "inline-flex",       
             alignItems: "center",     
